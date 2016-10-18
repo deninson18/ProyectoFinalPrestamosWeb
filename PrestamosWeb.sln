@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrestamosWeb", "PrestamosWeb\PrestamosWeb.csproj", "{93AF09C8-AFA4-4DC1-AB30-4DBF003B2C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{B3ECB01B-A351-4CFD-8EAA-FB364D3ED749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{E2DCC601-DC7B-464F-AD9D-A787DA78DD77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93AF09C8-AFA4-4DC1-AB30-4DBF003B2C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AF09C8-AFA4-4DC1-AB30-4DBF003B2C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AF09C8-AFA4-4DC1-AB30-4DBF003B2C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AF09C8-AFA4-4DC1-AB30-4DBF003B2C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3ECB01B-A351-4CFD-8EAA-FB364D3ED749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3ECB01B-A351-4CFD-8EAA-FB364D3ED749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3ECB01B-A351-4CFD-8EAA-FB364D3ED749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3ECB01B-A351-4CFD-8EAA-FB364D3ED749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DCC601-DC7B-464F-AD9D-A787DA78DD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DCC601-DC7B-464F-AD9D-A787DA78DD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DCC601-DC7B-464F-AD9D-A787DA78DD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DCC601-DC7B-464F-AD9D-A787DA78DD77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
