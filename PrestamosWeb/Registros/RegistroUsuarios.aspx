@@ -3,6 +3,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+     <div>
+        
+    <p>
+      <asp:Label AssociatedControlId="fileUploader1" runat="server"
+	    Text="Seleccionar una imagen:" />
+      <asp:FileUpload id="fileUploader1" runat="server" />
+    </p>
+    <asp:Button id="cargarImagen" runat="server"
+	  Text="Cargar imágenes" OnClick="cargarImagen_Click"/>
+    </div>
+
     USUARIO ID:<asp:TextBox ID="idUTextBox" runat="server"></asp:TextBox>
     <asp:Button ID="buscarUButton" runat="server" OnClick="buscarUButton_Click" Text="BUSCAR" />
     <br />

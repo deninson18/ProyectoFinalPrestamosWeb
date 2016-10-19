@@ -15,6 +15,7 @@ namespace BLL
         public string NombreUsuario { get; set; }
         public string Contrasena { get; set; }
         public string AreaUsuario { get; set; }
+        public string Foto { get; set; }
 
         public Usuarios()
         {
@@ -24,6 +25,7 @@ namespace BLL
             this.NombreUsuario = "";
             this.Contrasena = "";
             this.AreaUsuario = "";
+            this.Foto = "";
 
         }
         public override bool Insertar()
@@ -33,8 +35,8 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into Usuarios(Nombres,Apellidos,NombreUsuario,Contrasena,AreaUsuario) values('{0}','{1}','{2}','{3}','{4}')",
-                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario));
+                retorno = conexion.Ejecutar(String.Format("insert into Usuarios(Nombres,Apellidos,NombreUsuario,Contrasena,AreaUsuario,Foto) values('{0}','{1}','{2}','{3}','{4}','{5}')",
+                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario,this.Foto));
 
             }
             catch (Exception ex)
@@ -64,11 +66,10 @@ namespace BLL
 
         public override bool Buscar(int Buscado)
         {
+            ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
             try
             {
-                ConexionDb conexion = new ConexionDb();
-                DataTable dt = new DataTable();
-
                 dt = conexion.ObtenerDatos(string.Format("select * from Usuarios where UsuarioId={0}", Buscado));
                 if (dt.Rows.Count > 0)
                 {
