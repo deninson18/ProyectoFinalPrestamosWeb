@@ -31,9 +31,9 @@
     </asp:DropDownList>
     <br />
     <br />
-    <asp:Button ID="nuevoUButton" runat="server" OnClick="nuevoUButton_Click" Text="NUEVO" />
-    <asp:Button ID="guardarUButton" runat="server" OnClick="guardarUButton_Click" style="margin-left: 64px" Text="GUARDAR" Width="84px" />
-    <asp:Button ID="eliminarUButton" runat="server" OnClick="eliminarUButton_Click" style="margin-left: 61px" Text="ELIMINAR" />
+    <asp:Button Class="btn btn-info" ID="nuevoUButton" runat="server" OnClick="nuevoUButton_Click" Text="NUEVO" />
+    <asp:Button Class="btn btn-danger" ID="guardarUButton" runat="server" OnClick="guardarUButton_Click" style="margin-left: 64px" Text="GUARDAR" Width="84px" />
+    <asp:Button Class="btn btn-success" ID="eliminarUButton" runat="server" OnClick="eliminarUButton_Click" style="margin-left: 61px" Text="ELIMINAR" />
     <br />
 
 </asp:Content>

@@ -11,5 +11,50 @@ namespace PrestamosWeb.Consultas {
     
     
     public partial class ConsultaUsuarios {
+        
+        /// <summary>
+        /// usuarioDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList usuarioDropDownList;
+        
+        /// <summary>
+        /// usuarioFTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox usuarioFTextBox;
+        
+        /// <summary>
+        /// usuarioBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button usuarioBuscar;
+        
+        /// <summary>
+        /// usuarioRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater usuarioRepeater;
+        
+        /// <summary>
+        /// impUsuarioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button impUsuarioButton;
     }
 }

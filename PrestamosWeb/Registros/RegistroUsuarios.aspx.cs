@@ -171,8 +171,7 @@ namespace PrestamosWeb.Registros
                     // Se verifica que la extensión sea de un formato válido
                     string ext = fileUploader1.PostedFile.FileName;
                     ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-                    string[] formatos =
-                      new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+                    string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
                     if (Array.IndexOf(formatos, ext) < 0)
 
                         Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");

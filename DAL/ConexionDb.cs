@@ -4,31 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DAL
 {
     public class ConexionDb
     {
-        private SqlConnection conexion;
-        private SqlCommand cmd;
+        private SqlConnection con;
+        private SqlCommand Cmd;
 
         public ConexionDb()
         {
-            conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=PrestamoWebDB;Integrated Security=True");
-            cmd = new SqlCommand();
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
+            Cmd = new SqlCommand();
         }
 
+        /// <summary>
+        /// Ejecutar comandos contra la base de datos
+        /// </summary>
+        /// <param name="ComandoSql">El comando sql que se desea ejecutar</param>
+        /// <returns>Verdadero o Falso dependiendo de si ejecuto correctamente o no</returns>
         public bool Ejecutar(String ComandoSql)
         {
             bool retorno = false;
 
             try
             {
-                conexion.Open();
-                cmd.Connection = conexion;
-                cmd.CommandText = ComandoSql;
-                cmd.ExecuteNonQuery();
+                con.Open();
+                Cmd.Connection = con;
+                Cmd.CommandText = ComandoSql;
+                Cmd.ExecuteNonQuery();
                 retorno = true;
+
             }
             catch (Exception ex)
             {
@@ -36,8 +43,9 @@ namespace DAL
             }
             finally
             {
-                conexion.Close();
+                con.Close();
             }
+
             return retorno;
         }
 
@@ -48,11 +56,13 @@ namespace DAL
 
             try
             {
-                conexion.Open();
-                cmd.Connection = conexion;
-                cmd.CommandText = ComandoSql;
-                adapter = new SqlDataAdapter(cmd);
+                con.Open();
+                Cmd.Connection = con;
+                Cmd.CommandText = ComandoSql;
+
+                adapter = new SqlDataAdapter(Cmd);
                 adapter.Fill(dt);
+
             }
             catch (Exception ex)
             {
@@ -60,21 +70,22 @@ namespace DAL
             }
             finally
             {
-                conexion.Close();
+                con.Close();
             }
+
             return dt;
         }
 
-        public object ObtenerValor(String ComandoSql)
+        public Object ObtenerValor(String ComandoSql)
         {
-            object retorno = null;
+            Object retorno = null;
 
             try
             {
-                conexion.Open();
-                cmd.Connection = conexion;
-                cmd.CommandText = ComandoSql;
-                retorno = cmd.ExecuteScalar();
+                con.Open();
+                Cmd.Connection = con;
+                Cmd.CommandText = ComandoSql;
+                retorno = Cmd.ExecuteScalar();
 
             }
             catch (Exception ex)
@@ -83,9 +94,11 @@ namespace DAL
             }
             finally
             {
-                conexion.Close();
+                con.Close();
             }
+
             return retorno;
         }
     }
 }
+
