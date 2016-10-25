@@ -34,11 +34,11 @@ namespace PrestamosWeb {
         
         private UsuariosDataTable tableUsuarios;
         
-        private global::System.Data.DataRelation relationFK__Prestamos__Clien__1920BF5C;
+        private global::System.Data.DataRelation relationFK__Prestamos__Clien__47DBAE45;
         
-        private global::System.Data.DataRelation relationFK__Prestamos__RutaI__1A14E395;
+        private global::System.Data.DataRelation relationFK__Prestamos__RutaI__48CFD27E;
         
-        private global::System.Data.DataRelation relationFK__Rutas__CobradorI__145C0A3F;
+        private global::System.Data.DataRelation relationFK__Rutas__CobradorI__286302EC;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -296,9 +296,9 @@ namespace PrestamosWeb {
                     this.tableUsuarios.InitVars();
                 }
             }
-            this.relationFK__Prestamos__Clien__1920BF5C = this.Relations["FK__Prestamos__Clien__1920BF5C"];
-            this.relationFK__Prestamos__RutaI__1A14E395 = this.Relations["FK__Prestamos__RutaI__1A14E395"];
-            this.relationFK__Rutas__CobradorI__145C0A3F = this.Relations["FK__Rutas__CobradorI__145C0A3F"];
+            this.relationFK__Prestamos__Clien__47DBAE45 = this.Relations["FK__Prestamos__Clien__47DBAE45"];
+            this.relationFK__Prestamos__RutaI__48CFD27E = this.Relations["FK__Prestamos__RutaI__48CFD27E"];
+            this.relationFK__Rutas__CobradorI__286302EC = this.Relations["FK__Rutas__CobradorI__286302EC"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -319,18 +319,18 @@ namespace PrestamosWeb {
             base.Tables.Add(this.tableRutas);
             this.tableUsuarios = new UsuariosDataTable();
             base.Tables.Add(this.tableUsuarios);
-            this.relationFK__Prestamos__Clien__1920BF5C = new global::System.Data.DataRelation("FK__Prestamos__Clien__1920BF5C", new global::System.Data.DataColumn[] {
+            this.relationFK__Prestamos__Clien__47DBAE45 = new global::System.Data.DataRelation("FK__Prestamos__Clien__47DBAE45", new global::System.Data.DataColumn[] {
                         this.tableClientes.ClienteIdColumn}, new global::System.Data.DataColumn[] {
                         this.tablePrestamos.ClienteIdColumn}, false);
-            this.Relations.Add(this.relationFK__Prestamos__Clien__1920BF5C);
-            this.relationFK__Prestamos__RutaI__1A14E395 = new global::System.Data.DataRelation("FK__Prestamos__RutaI__1A14E395", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Prestamos__Clien__47DBAE45);
+            this.relationFK__Prestamos__RutaI__48CFD27E = new global::System.Data.DataRelation("FK__Prestamos__RutaI__48CFD27E", new global::System.Data.DataColumn[] {
                         this.tableRutas.RutaIdColumn}, new global::System.Data.DataColumn[] {
                         this.tablePrestamos.RutaIdColumn}, false);
-            this.Relations.Add(this.relationFK__Prestamos__RutaI__1A14E395);
-            this.relationFK__Rutas__CobradorI__145C0A3F = new global::System.Data.DataRelation("FK__Rutas__CobradorI__145C0A3F", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Prestamos__RutaI__48CFD27E);
+            this.relationFK__Rutas__CobradorI__286302EC = new global::System.Data.DataRelation("FK__Rutas__CobradorI__286302EC", new global::System.Data.DataColumn[] {
                         this.tableCobradores.CobradorIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableRutas.CobradorIdColumn}, false);
-            this.Relations.Add(this.relationFK__Rutas__CobradorI__145C0A3F);
+            this.Relations.Add(this.relationFK__Rutas__CobradorI__286302EC);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1368,7 +1368,7 @@ namespace PrestamosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PrestamosRow AddPrestamosRow(ClientesRow parentClientesRowByFK__Prestamos__Clien__1920BF5C, RutasRow parentRutasRowByFK__Prestamos__RutaI__1A14E395, string FechaInicial, string FechaVencimiento, double Monto, int NuSemana, int Semana, int ValorCuota, double Interes, double PagoTotal) {
+            public PrestamosRow AddPrestamosRow(ClientesRow parentClientesRowByFK__Prestamos__Clien__47DBAE45, RutasRow parentRutasRowByFK__Prestamos__RutaI__48CFD27E, string FechaInicial, string FechaVencimiento, double Monto, int NuSemana, int Semana, int ValorCuota, double Interes, double PagoTotal) {
                 PrestamosRow rowPrestamosRow = ((PrestamosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1382,11 +1382,11 @@ namespace PrestamosWeb {
                         ValorCuota,
                         Interes,
                         PagoTotal};
-                if ((parentClientesRowByFK__Prestamos__Clien__1920BF5C != null)) {
-                    columnValuesArray[1] = parentClientesRowByFK__Prestamos__Clien__1920BF5C[0];
+                if ((parentClientesRowByFK__Prestamos__Clien__47DBAE45 != null)) {
+                    columnValuesArray[1] = parentClientesRowByFK__Prestamos__Clien__47DBAE45[0];
                 }
-                if ((parentRutasRowByFK__Prestamos__RutaI__1A14E395 != null)) {
-                    columnValuesArray[2] = parentRutasRowByFK__Prestamos__RutaI__1A14E395[0];
+                if ((parentRutasRowByFK__Prestamos__RutaI__48CFD27E != null)) {
+                    columnValuesArray[2] = parentRutasRowByFK__Prestamos__RutaI__48CFD27E[0];
                 }
                 rowPrestamosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrestamosRow);
@@ -1698,14 +1698,14 @@ namespace PrestamosWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RutasRow AddRutasRow(CobradoresRow parentCobradoresRowByFK__Rutas__CobradorI__145C0A3F, string NombreRuta) {
+            public RutasRow AddRutasRow(CobradoresRow parentCobradoresRowByFK__Rutas__CobradorI__286302EC, string NombreRuta) {
                 RutasRow rowRutasRow = ((RutasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         NombreRuta};
-                if ((parentCobradoresRowByFK__Rutas__CobradorI__145C0A3F != null)) {
-                    columnValuesArray[1] = parentCobradoresRowByFK__Rutas__CobradorI__145C0A3F[0];
+                if ((parentCobradoresRowByFK__Rutas__CobradorI__286302EC != null)) {
+                    columnValuesArray[1] = parentCobradoresRowByFK__Rutas__CobradorI__286302EC[0];
                 }
                 rowRutasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRutasRow);
@@ -2517,11 +2517,11 @@ namespace PrestamosWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PrestamosRow[] GetPrestamosRows() {
-                if ((this.Table.ChildRelations["FK__Prestamos__Clien__1920BF5C"] == null)) {
+                if ((this.Table.ChildRelations["FK__Prestamos__Clien__47DBAE45"] == null)) {
                     return new PrestamosRow[0];
                 }
                 else {
-                    return ((PrestamosRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Prestamos__Clien__1920BF5C"])));
+                    return ((PrestamosRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Prestamos__Clien__47DBAE45"])));
                 }
             }
         }
@@ -2722,11 +2722,11 @@ namespace PrestamosWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RutasRow[] GetRutasRows() {
-                if ((this.Table.ChildRelations["FK__Rutas__CobradorI__145C0A3F"] == null)) {
+                if ((this.Table.ChildRelations["FK__Rutas__CobradorI__286302EC"] == null)) {
                     return new RutasRow[0];
                 }
                 else {
-                    return ((RutasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Rutas__CobradorI__145C0A3F"])));
+                    return ((RutasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Rutas__CobradorI__286302EC"])));
                 }
             }
         }
@@ -2920,10 +2920,10 @@ namespace PrestamosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ClientesRow ClientesRow {
                 get {
-                    return ((ClientesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Prestamos__Clien__1920BF5C"])));
+                    return ((ClientesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Prestamos__Clien__47DBAE45"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Prestamos__Clien__1920BF5C"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Prestamos__Clien__47DBAE45"]);
                 }
             }
             
@@ -2931,10 +2931,10 @@ namespace PrestamosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RutasRow RutasRow {
                 get {
-                    return ((RutasRow)(this.GetParentRow(this.Table.ParentRelations["FK__Prestamos__RutaI__1A14E395"])));
+                    return ((RutasRow)(this.GetParentRow(this.Table.ParentRelations["FK__Prestamos__RutaI__48CFD27E"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Prestamos__RutaI__1A14E395"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Prestamos__RutaI__48CFD27E"]);
                 }
             }
             
@@ -3120,10 +3120,10 @@ namespace PrestamosWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CobradoresRow CobradoresRow {
                 get {
-                    return ((CobradoresRow)(this.GetParentRow(this.Table.ParentRelations["FK__Rutas__CobradorI__145C0A3F"])));
+                    return ((CobradoresRow)(this.GetParentRow(this.Table.ParentRelations["FK__Rutas__CobradorI__286302EC"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Rutas__CobradorI__145C0A3F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Rutas__CobradorI__286302EC"]);
                 }
             }
             
@@ -3154,11 +3154,11 @@ namespace PrestamosWeb {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PrestamosRow[] GetPrestamosRows() {
-                if ((this.Table.ChildRelations["FK__Prestamos__RutaI__1A14E395"] == null)) {
+                if ((this.Table.ChildRelations["FK__Prestamos__RutaI__48CFD27E"] == null)) {
                     return new PrestamosRow[0];
                 }
                 else {
-                    return ((PrestamosRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Prestamos__RutaI__1A14E395"])));
+                    return ((PrestamosRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Prestamos__RutaI__48CFD27E"])));
                 }
             }
         }
@@ -3703,7 +3703,7 @@ namespace PrestamosWeb.PrestamoWebDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PrestamosWeb.Properties.Settings.Default.ConStr;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PrestamoWebDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4109,7 +4109,7 @@ namespace PrestamosWeb.PrestamoWebDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PrestamosWeb.Properties.Settings.Default.ConStr;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PrestamoWebDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4487,7 +4487,7 @@ namespace PrestamosWeb.PrestamoWebDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PrestamosWeb.Properties.Settings.Default.ConStr;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PrestamoWebDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4891,7 +4891,7 @@ namespace PrestamosWeb.PrestamoWebDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PrestamosWeb.Properties.Settings.Default.ConStr;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PrestamoWebDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5212,7 +5212,7 @@ namespace PrestamosWeb.PrestamoWebDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PrestamosWeb.Properties.Settings.Default.ConStr;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PrestamoWebDBConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

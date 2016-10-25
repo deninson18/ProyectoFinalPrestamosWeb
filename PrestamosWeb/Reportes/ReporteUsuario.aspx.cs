@@ -14,14 +14,13 @@ namespace PrestamosWeb.Reportes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-   
-            if (IsPostBack)
+            Usuarios u = new Usuarios();
+            if (!IsPostBack)
             {
                 Configuracion(usuarioReportViewer);
-                
             }
+               
 
-           
         }
         private void Configuracion(ReportViewer reportViewergenerico)
         {
@@ -29,9 +28,11 @@ namespace PrestamosWeb.Reportes
             reportViewergenerico.LocalReport.DataSources.Clear();
             reportViewergenerico.ProcessingMode = ProcessingMode.Local;
 
-            reportViewergenerico.LocalReport.ReportPath = @"\Rpts\UsuariosReport.rdlc";
+            reportViewergenerico.LocalReport.ReportPath = @"Rpts\UsuariosReport.rdlc";
+            //reportViewergenerico.LocalReport.ReportPath = @"\Rpts\ReporteUsuario.rdlc";
 
             ReportDataSource ds = new ReportDataSource("Usuarios", usuario.ListadoDt("1=1"));
+            
             reportViewergenerico.LocalReport.DataSources.Add(ds);
 
             reportViewergenerico.LocalReport.Refresh();

@@ -3,9 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
 
-    <rsweb:ReportViewer ID="usuarioReportViewer" runat="server">
+    </asp:ScriptManager>
+
+   <rsweb:ReportViewer ID="usuarioReportViewer" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
         <LocalReport ReportPath="Rpts\UsuariosReport.rdlc">
 
         </LocalReport>

@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConStr" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConStr (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PrestamosWeb.Properties.Settings.GlobalReference.Default.ConStr" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PrestamoWebDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PrestamoWebDBConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PrestamoWebDBConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientesTableAdapter" GeneratorDataComponentClassName="ClientesTableAdapter" Name="Clientes" UserDataComponentName="ClientesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PrestamoWebDBConnectionString (Web.config)" DbObjectName="PrestamoWebDB.dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Clientes] WHERE (([ClienteId] = @Original_ClienteId))</CommandText>
@@ -75,7 +75,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CobradoresTableAdapter" GeneratorDataComponentClassName="CobradoresTableAdapter" Name="Cobradores" UserDataComponentName="CobradoresTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Cobradores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PrestamoWebDBConnectionString (Web.config)" DbObjectName="PrestamoWebDB.dbo.Cobradores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Cobradores] WHERE (([CobradorId] = @Original_CobradorId))</CommandText>
@@ -132,7 +132,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PrestamosTableAdapter" GeneratorDataComponentClassName="PrestamosTableAdapter" Name="Prestamos" UserDataComponentName="PrestamosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Prestamos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PrestamoWebDBConnectionString (Web.config)" DbObjectName="PrestamoWebDB.dbo.Prestamos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Prestamos] WHERE (([PrestamoId] = @Original_PrestamoId))</CommandText>
@@ -201,7 +201,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RutasTableAdapter" GeneratorDataComponentClassName="RutasTableAdapter" Name="Rutas" UserDataComponentName="RutasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Rutas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PrestamoWebDBConnectionString (Web.config)" DbObjectName="PrestamoWebDB.dbo.Rutas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Rutas] WHERE (([RutaId] = @Original_RutaId))</CommandText>
@@ -246,7 +246,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosTableAdapter" GeneratorDataComponentClassName="UsuariosTableAdapter" Name="Usuarios" UserDataComponentName="UsuariosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PrestamoWebDBConnectionString (Web.config)" DbObjectName="PrestamoWebDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Usuarios] WHERE (([UsuarioId] = @Original_UsuarioId))</CommandText>
@@ -540,9 +540,9 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Prestamos__Clien__1920BF5C" msdata:parent="Clientes" msdata:child="Prestamos" msdata:parentkey="ClienteId" msdata:childkey="ClienteId" msprop:Generator_UserChildTable="Prestamos" msprop:Generator_ChildPropName="GetPrestamosRows" msprop:Generator_UserRelationName="FK__Prestamos__Clien__1920BF5C" msprop:Generator_ParentPropName="ClientesRow" msprop:Generator_RelationVarName="relationFK__Prestamos__Clien__1920BF5C" msprop:Generator_UserParentTable="Clientes" />
-      <msdata:Relationship name="FK__Prestamos__RutaI__1A14E395" msdata:parent="Rutas" msdata:child="Prestamos" msdata:parentkey="RutaId" msdata:childkey="RutaId" msprop:Generator_UserChildTable="Prestamos" msprop:Generator_ChildPropName="GetPrestamosRows" msprop:Generator_UserRelationName="FK__Prestamos__RutaI__1A14E395" msprop:Generator_RelationVarName="relationFK__Prestamos__RutaI__1A14E395" msprop:Generator_UserParentTable="Rutas" msprop:Generator_ParentPropName="RutasRow" />
-      <msdata:Relationship name="FK__Rutas__CobradorI__145C0A3F" msdata:parent="Cobradores" msdata:child="Rutas" msdata:parentkey="CobradorId" msdata:childkey="CobradorId" msprop:Generator_UserChildTable="Rutas" msprop:Generator_ChildPropName="GetRutasRows" msprop:Generator_UserRelationName="FK__Rutas__CobradorI__145C0A3F" msprop:Generator_ParentPropName="CobradoresRow" msprop:Generator_RelationVarName="relationFK__Rutas__CobradorI__145C0A3F" msprop:Generator_UserParentTable="Cobradores" />
+      <msdata:Relationship name="FK__Prestamos__Clien__47DBAE45" msdata:parent="Clientes" msdata:child="Prestamos" msdata:parentkey="ClienteId" msdata:childkey="ClienteId" msprop:Generator_UserChildTable="Prestamos" msprop:Generator_ChildPropName="GetPrestamosRows" msprop:Generator_UserRelationName="FK__Prestamos__Clien__47DBAE45" msprop:Generator_ParentPropName="ClientesRow" msprop:Generator_RelationVarName="relationFK__Prestamos__Clien__47DBAE45" msprop:Generator_UserParentTable="Clientes" />
+      <msdata:Relationship name="FK__Prestamos__RutaI__48CFD27E" msdata:parent="Rutas" msdata:child="Prestamos" msdata:parentkey="RutaId" msdata:childkey="RutaId" msprop:Generator_UserChildTable="Prestamos" msprop:Generator_ChildPropName="GetPrestamosRows" msprop:Generator_UserRelationName="FK__Prestamos__RutaI__48CFD27E" msprop:Generator_RelationVarName="relationFK__Prestamos__RutaI__48CFD27E" msprop:Generator_UserParentTable="Rutas" msprop:Generator_ParentPropName="RutasRow" />
+      <msdata:Relationship name="FK__Rutas__CobradorI__286302EC" msdata:parent="Cobradores" msdata:child="Rutas" msdata:parentkey="CobradorId" msdata:childkey="CobradorId" msprop:Generator_UserChildTable="Rutas" msprop:Generator_ChildPropName="GetRutasRows" msprop:Generator_UserRelationName="FK__Rutas__CobradorI__286302EC" msprop:Generator_ParentPropName="CobradoresRow" msprop:Generator_RelationVarName="relationFK__Rutas__CobradorI__286302EC" msprop:Generator_UserParentTable="Cobradores" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
