@@ -142,6 +142,14 @@ namespace BLL
             return conexion.ObtenerDatos("select" + Campos + "from Prestamos where" + Condicion + " " + Orden);
         }
 
-        
+        public DataTable ListadoDt(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
+
+            return conexion.ObtenerDatos(string.Format("select *" + " from Prestamos where " + Condicion));
+
+        }
+
+
     }
 }

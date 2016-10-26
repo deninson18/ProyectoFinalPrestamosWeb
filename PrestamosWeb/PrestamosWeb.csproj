@@ -131,6 +131,8 @@
     <Content Include="PrestamoWebDBDataSet.xss">
       <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Registros\RegistroCobradores.aspx" />
+    <Content Include="Registros\RegistroRutas.aspx" />
     <Content Include="Registros\RegistroUsuarios.aspx" />
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
@@ -162,6 +164,20 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroCobradores.aspx.cs">
+      <DependentUpon>RegistroCobradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroCobradores.aspx.designer.cs">
+      <DependentUpon>RegistroCobradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroRutas.aspx.cs">
+      <DependentUpon>RegistroRutas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroRutas.aspx.designer.cs">
+      <DependentUpon>RegistroRutas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
