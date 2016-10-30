@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class Clientes : ClaseMaestra
+    public class Clientes : ClaseMaestra
     {
         public int ClienteId { get; set; }
         public string Nombres { get; set; }
@@ -28,7 +28,7 @@ namespace BLL
             this.Apodos = "";
             this.Direccion = "";
             this.Referencia = "";
-            this.Sexo = 0;
+            this.Sexo =0;
             this.Cedula = "";
             this.Telefono = "";
             this.Celular = "";
@@ -46,10 +46,11 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into (Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}')",
-                    this.Nombres, this.Apellidos, this.Apodos, this.Direccion, this.Referencia, this.Sexo, this.Cedula, this.Telefono, this.Celular));
+                retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}')",
+                  this.Nombres, this.Apellidos, this.Apodos, this.Direccion, this.Referencia, this.Sexo, this.Cedula, this.Telefono, this.Celular));
 
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

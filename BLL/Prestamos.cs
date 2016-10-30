@@ -7,7 +7,7 @@ using DAL;
 
 namespace BLL
 {
-    class Prestamos : ClaseMaestra
+    public class Prestamos : ClaseMaestra
     {
         public int PrestamoId { get; set; }
         public int ClienteId { get; set; }

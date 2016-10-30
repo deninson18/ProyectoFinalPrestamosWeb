@@ -5,6 +5,7 @@
     Buscar Por:<asp:DropDownList ID="usuarioDropDownList" runat="server" Height="16px" Width="131px">
         <asp:ListItem>Id</asp:ListItem>
         <asp:ListItem>Nombre</asp:ListItem>
+        <asp:ListItem>Apellido</asp:ListItem>
         <asp:ListItem>Usuario</asp:ListItem>
     </asp:DropDownList>
 

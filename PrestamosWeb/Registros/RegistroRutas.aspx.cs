@@ -30,6 +30,7 @@ namespace PrestamosWeb.Registros
         {
             idRutaTextBox.Text = ruta.RutaId.ToString();
             nombreRuTextBox.Text = ruta.NombreRuta;
+            cobradorRuDropDownList.Text = ruta.CobradorId.ToString();
 
         }
         private void Limpiar()
@@ -68,6 +69,49 @@ namespace PrestamosWeb.Registros
         protected void nuevoRuButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        protected void eliminarRuButton_Click(object sender, EventArgs e)
+        {
+            Rutas ruta = new Rutas();
+            int id = 0;
+            int.TryParse(idRutaTextBox.Text, out id);
+            ruta.RutaId = id;
+
+            if (id > 0)
+            {
+                CargarDatos(ruta);
+                if (ruta.Eliminar())
+                {
+                    Limpiar();
+                    Response.Write("<script>alert('Elimino Exitosamente')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error al eliminar')</script>");
+                }
+
+            }
+        }
+
+        protected void buscarRuButton_Click(object sender, EventArgs e)
+        {
+            Rutas ruta = new Rutas();
+            int id = 0;
+            int.TryParse(idRutaTextBox.Text, out id);
+
+            if (id > 0)
+            {
+                if (ruta.Buscar(id))
+                {
+                    DevolverDatos(ruta);
+                }
+                else
+                {
+                    Response.Write("<script>alert('No existe Cobrador ID')</script>");
+                }
+
+            }
         }
     }
 }

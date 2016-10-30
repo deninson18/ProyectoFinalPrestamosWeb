@@ -59,3 +59,5 @@ select * from Cobradores;
 select * from Rutas;
 select * from Clientes;
 select * from Prestamos;
+
+insert into Prestamos(ClienteId,RutaId,FechaInicial,FechaVencimiento,Monto,PagoTotal)values('1','1','10-10-2016','12-12-20166','2000','2600');
