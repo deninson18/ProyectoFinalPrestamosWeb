@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     Cobrador Id:<asp:TextBox ID="idCoTextBox" runat="server"></asp:TextBox>
     <asp:Button class="btn btn-default" ID="buscarCoButton" runat="server" Text="BUSCAR" OnClick="buscarCoButton_Click" />
     <br />

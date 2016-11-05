@@ -27,10 +27,7 @@ namespace BLL
             this.NombreRuta = nombreRuta;
         }
 
-        public void AgregarCobrador(int CobradorId, string Nombres, string Apellidos)
-        {
-            this.ListaCobradores.Add(new Cobradores(CobradorId, Nombres, Apellidos));
-        }
+
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();

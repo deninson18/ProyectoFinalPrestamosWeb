@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     Cliente Id:<asp:TextBox ID="idClienteTextBox" runat="server"></asp:TextBox>
     <asp:Button class="btn btn-default" ID="buscarCliButton" runat="server" Text="BUSCAR" OnClick="buscarCliButton_Click" />
     <br />

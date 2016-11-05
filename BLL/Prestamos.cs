@@ -40,6 +40,19 @@ namespace BLL
             this.PagoTotal = 0;
 
         }
+        public Prestamos(int prestamoId, int clienteId, int rutaId, string fechaInicial, string fechaVencimiento, float Monto, int Nusemana, int Semana, int Valorcuota, float interes,float PagoTotal)
+        {
+            this.PrestamoId = prestamoId;
+            this.ClienteId = clienteId;
+            this.RutaId = rutaId;
+            this.FechaInicial = fechaInicial;
+            this.FechaVencimiento = fechaVencimiento;
+            this.Monto =Monto ;
+            this.NuSemana = Nusemana;
+            this.Semana = Semana;
+            this.ValorCuota = ValorCuota;
+            this.PagoTotal = PagoTotal;             
+        }
 
         public void AgregarClientes(int clienteId, string nombres)
         {
@@ -58,7 +71,7 @@ namespace BLL
 
             try
             { 
-            retorno = conexion.Ejecutar(String.Format("Insert Into Prestamos(ClienteId,RutaId,FechaInicial,FechaVencimiento,Monto,NuSemana,Semana,ValorCuota,Interes,PagoTotal) values({0},{1},'{2}','{3}',{4},{5},{6},{7},{8},{9},{10})",
+            retorno = conexion.Ejecutar(String.Format("Insert Into Prestamos(ClienteId,RutaId,FechaInicial,FechaVencimiento,Monto,NuSemana,Semana,ValorCuota,Interes,PagoTotal) values({0},{1},'{2}','{3}',{4},{5},{6},{7},{8},{9})",
                 this.ClienteId, this.RutaId, this.FechaInicial, FechaVencimiento, Monto, this.NuSemana, this.Semana, this.ValorCuota, this.Interes,this.PagoTotal));
             }catch(Exception ex)
             {
@@ -139,7 +152,7 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos("select" + Campos + "from Prestamos where" + Condicion + " " + Orden);
+            return conexion.ObtenerDatos("select" + Campos + "from Prestamos where" + Condicion + Orden);
         }
 
         public DataTable ListadoDt(string Condicion)

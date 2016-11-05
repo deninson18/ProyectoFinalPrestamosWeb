@@ -42,9 +42,7 @@ namespace PrestamosWeb.Registros
 
         private void CargarDropDList()
         {
-        
             Cobradores cobrador = new Cobradores();
-            Rutas ruta = new Rutas();
             cobradorRuDropDownList.DataSource = cobrador.Listado("*", "1=1", "");
             cobradorRuDropDownList.DataTextField = "Nombres";
             cobradorRuDropDownList.DataValueField = "CobradorId";

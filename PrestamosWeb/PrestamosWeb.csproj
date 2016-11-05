@@ -120,6 +120,40 @@
     <Content Include="App_Data\PrestamoWebDB_log.ldf">
       <DependentUpon>PrestamoWebDB.mdf</DependentUpon>
     </Content>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\1.jpg" />
+    <Content Include="assets\img\team\1.png" />
+    <Content Include="assets\img\team\2.png" />
+    <Content Include="assets\img\team\3.png" />
+    <Content Include="assets\img\team\4.png" />
+    <Content Include="assets\img\user.gif" />
+    <Content Include="assets\img\user2.png" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\plugins\bootstrap.js" />
+    <Content Include="assets\plugins\jquery-1.10.2.js" />
+    <Content Include="assets\plugins\jquery.easing.min.js" />
+    <Content Include="assets\plugins\vegas\images\loading.html" />
+    <Content Include="assets\plugins\vegas\jquery.vegas.min.css" />
+    <Content Include="assets\plugins\vegas\jquery.vegas.min.js" />
+    <Content Include="assets\plugins\vegas\overlays\01.png" />
+    <Content Include="assets\plugins\vegas\overlays\02.png" />
+    <Content Include="assets\plugins\vegas\overlays\03.png" />
+    <Content Include="assets\plugins\vegas\overlays\04.png" />
+    <Content Include="assets\plugins\vegas\overlays\05.png" />
+    <Content Include="assets\plugins\vegas\overlays\06.png" />
+    <Content Include="assets\plugins\vegas\overlays\07.png" />
+    <Content Include="assets\plugins\vegas\overlays\08.png" />
+    <Content Include="assets\plugins\vegas\overlays\09.png" />
+    <Content Include="assets\plugins\vegas\overlays\10.png" />
+    <Content Include="assets\plugins\vegas\overlays\11.png" />
+    <Content Include="assets\plugins\vegas\overlays\12.png" />
+    <Content Include="assets\plugins\vegas\overlays\13.png" />
+    <Content Include="assets\plugins\vegas\overlays\14.png" />
+    <Content Include="assets\plugins\vegas\overlays\15.png" />
     <Content Include="Consultas\ConsultaPrestamos.aspx" />
     <Content Include="Consultas\ConsultaUsuarios.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -132,8 +166,10 @@
     <Content Include="PrestamoWebDBDataSet.xss">
       <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Principal.aspx" />
     <Content Include="Registros\RegistroClientes.aspx" />
     <Content Include="Registros\RegistroCobradores.aspx" />
+    <Content Include="Registros\RegistroPrestamos.aspx" />
     <Content Include="Registros\RegistroRutas.aspx" />
     <Content Include="Registros\RegistroUsuarios.aspx" />
     <Content Include="Reportes\ReportePrestamos.aspx" />
@@ -169,6 +205,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -188,6 +231,13 @@
     </Compile>
     <Compile Include="Registros\RegistroCobradores.aspx.designer.cs">
       <DependentUpon>RegistroCobradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroPrestamos.aspx.cs">
+      <DependentUpon>RegistroPrestamos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroPrestamos.aspx.designer.cs">
+      <DependentUpon>RegistroPrestamos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\RegistroRutas.aspx.cs">
       <DependentUpon>RegistroRutas.aspx</DependentUpon>
@@ -228,6 +278,14 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="assets\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="PrestamoWebDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PrestamoWebDBDataSet.Designer.cs</LastGenOutput>
@@ -254,6 +312,7 @@
     <EmbeddedResource Include="Rpts\PrestamosReport.rdlc" />
     <EmbeddedResource Include="Rpts\UsuariosReport.rdlc" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -2,21 +2,75 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+        <title> PrestamosRapidos</title>
+     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="/Content/bootstrap-theme.min.css" rel="stylesheet"/>
+      <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+<%--    <link href="/Content/bootstrap-theme.min.css" rel="stylesheet"/>--%>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    
+
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top scrollclass color-bg-one " >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">YOUR LOGO</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">HOME</a></li>
+                     <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#clients-testimonial">TESTIMONIALS</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                     <li><a href="#social-section">SOCIAL</a></li>
+                    
+                </ul>
+            </div>
+           
+        </div>
+    </nav>
+   
+    
+   
+    
+    <!-- END FOOTER SECTION -->
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="assets/plugins/bootstrap.js"></script>  
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
+     <!-- SCROLL SCRIPTS -->
+    <script src="assets/plugins/jquery.easing.min.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
+  
     </form>
 </body>
 </html>
