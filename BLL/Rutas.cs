@@ -25,17 +25,20 @@ namespace BLL
         {
             this.RutaId = rutaId;
             this.NombreRuta = nombreRuta;
+           
         }
 
 
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
-            bool retorno = false;
+           bool retorno=false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into Rutas(NombreRuta,CobradorId) values('{0}',{1})", this.NombreRuta,this.CobradorId));
-            }catch(Exception ex)
+               retorno= conexion.Ejecutar(String.Format("insert into Rutas(NombreRuta,CobradorId) values('{0}',{1}) ",
+                    this.NombreRuta,this.CobradorId));
+                    
+                }catch(Exception ex)
             {
                 throw ex;
             }
@@ -48,7 +51,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Rutas set NombreRuta='{0}' CobradorId={1} where RutaId={2} ", this.NombreRuta, this.CobradorId,this.RutaId));
+                retorno = conexion.Ejecutar(String.Format("update Rutas set NombreRuta='{0}' CobradorId={1} where RutaId={2} ",
+                    this.NombreRuta, this.CobradorId,this.RutaId));
             }
             catch (Exception ex)
             {
@@ -63,7 +67,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("delete from Rutas where RutaId={0} ",this.RutaId));
+                retorno = conexion.Ejecutar(String.Format("delelete from RutasCobradore where RutaId={0};delete from Rutas where RutaId={0}; ",this.RutaId));
             }
             catch (Exception ex)
             {
@@ -103,7 +107,7 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos(("Select " + Campos + " from Rutas where " + Condicion + Orden));
+            return conexion.ObtenerDatos("Select " + Campos + " From Cobradores as C inner join Rutas as R on C.CobradorId=R.CobradorId Where " + Condicion + Orden);
         }
 
        

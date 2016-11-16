@@ -19,6 +19,7 @@
     <br />
     Referencia:<asp:TextBox ID="referenciaCliTextBox" runat="server"></asp:TextBox>
     <br />
+    Ruta:<asp:DropDownList ID="rutaPDropDownList" runat="server" Height="20px" Width="141px"></asp:DropDownList>
     <br />
     <fieldset style="width:300px">
     <legend>SEXO</legend>

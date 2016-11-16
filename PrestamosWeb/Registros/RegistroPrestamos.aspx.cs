@@ -12,39 +12,53 @@ namespace PrestamosWeb.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
-            {
-                CargarDropDList();
+            {  
+                CargarDropDList();               
             }
           
         }
-        public void CargarDatos(Prestamos prestamo)
+        private void CargarDatos(Prestamos prestamo)
         {
             int id;
             int.TryParse(idPTextBox.Text, out id);
             prestamo.PrestamoId = id;
             prestamo.ClienteId = Convert.ToInt32(clientePDropDownList.SelectedValue);
-            prestamo.RutaId = Convert.ToInt32(rutaPDropDownList.SelectedValue);
             prestamo.FechaInicial = fechaInicialPTextBox.Text;
             prestamo.FechaVencimiento = fechaFinalPTextBox.Text;
+            prestamo.CantidadCuota = (float)Convert.ToDecimal(cantidadCuotaDropDownList.SelectedValue.ToString());
+            prestamo.Interes = (float)Convert.ToDecimal(interesDropDownList.SelectedValue.ToString());
             float idMonto;
             float.TryParse(montoPTextBox.Text, out idMonto);
             prestamo.Monto = idMonto;
+
+            float cuotaId;
+            float.TryParse(CuotaPTextBox.Text, out cuotaId);
+            prestamo.Cuota = cuotaId;
+
+            float pTotal;
+            float.TryParse(PagoTotalPTextBox.Text, out pTotal);
+            prestamo.PagoTotal = pTotal;
+
+            int NuSemana;
+            int.TryParse(nuSemanaPTextBox.Text, out NuSemana);
+            prestamo.NuSemana = NuSemana;
         }
-        public void DevolverDatos(Prestamos prestamo)
+
+
+       private void DevolverDatos(Prestamos prestamo)
         {
             idPTextBox.Text = prestamo.PrestamoId.ToString();
             clientePDropDownList.Text = prestamo.ClienteId.ToString();
-            rutaPDropDownList.Text = prestamo.RutaId.ToString();
             montoPTextBox.Text = prestamo.Monto.ToString();
         }
-        public void Limpiar()
+     private void Limpiar()
         {
             idPTextBox.Text = string.Empty;
             clientePDropDownList.SelectedIndex = 0;
-            rutaPDropDownList.SelectedIndex = 0;
             montoPTextBox.Text = string.Empty;
-            valorCuotaPTextBox.Text = string.Empty;
+            CuotaPTextBox.Text = string.Empty;
             fechaInicialPTextBox.Text = string.Empty;
             fechaFinalPTextBox.Text = string.Empty;
             nuSemanaPTextBox.Text = string.Empty;
@@ -59,20 +73,16 @@ namespace PrestamosWeb.Registros
             clientePDropDownList.DataValueField = "ClienteId";
             clientePDropDownList.DataBind();
 
-            rutaPDropDownList.DataSource = ruta.Listado("*", "1=1", "");
-            rutaPDropDownList.DataTextField = "NombreRuta";
-            rutaPDropDownList.DataValueField = "RutaId";
-            rutaPDropDownList.DataBind();
         }
 
         protected void guardarPButton_Click(object sender, EventArgs e)
         {
             Prestamos prestamo = new Prestamos();
             CargarDatos(prestamo);
-
             if (prestamo.Insertar())
             {
                 Response.Write("<script>alert('Guardo Exitosamente')</script>");
+               // Limpiar();
             }
             else
             {
@@ -83,6 +93,22 @@ namespace PrestamosWeb.Registros
         protected void nuevoPButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        protected void montoPTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Prestamos prestamo = new Prestamos();
+            prestamo.Cuota = (float)Convert.ToDecimal(montoPTextBox.Text) * (float)Convert.ToDecimal(interesDropDownList.SelectedValue);
+            CuotaPTextBox.Text = prestamo.Cuota.ToString();
+
+            prestamo.PagoTotal = (float)Convert.ToDecimal(CuotaPTextBox.Text) * (int)Convert.ToDecimal(cantidadCuotaDropDownList.SelectedValue);
+            PagoTotalPTextBox.Text = prestamo.PagoTotal.ToString();
+
+        }
+
+        protected void clientePDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

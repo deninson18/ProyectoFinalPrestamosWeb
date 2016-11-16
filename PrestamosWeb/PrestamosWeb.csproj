@@ -154,7 +154,9 @@
     <Content Include="assets\plugins\vegas\overlays\13.png" />
     <Content Include="assets\plugins\vegas\overlays\14.png" />
     <Content Include="assets\plugins\vegas\overlays\15.png" />
+    <Content Include="Consultas\ConsultaCobradores.aspx" />
     <Content Include="Consultas\ConsultaPrestamos.aspx" />
+    <Content Include="Consultas\ConsultaRutas.aspx" />
     <Content Include="Consultas\ConsultaUsuarios.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -179,12 +181,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaCobradores.aspx.cs">
+      <DependentUpon>ConsultaCobradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaCobradores.aspx.designer.cs">
+      <DependentUpon>ConsultaCobradores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaPrestamos.aspx.cs">
       <DependentUpon>ConsultaPrestamos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\ConsultaPrestamos.aspx.designer.cs">
       <DependentUpon>ConsultaPrestamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaRutas.aspx.cs">
+      <DependentUpon>ConsultaRutas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaRutas.aspx.designer.cs">
+      <DependentUpon>ConsultaRutas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ConsultaUsuarios.aspx.cs">
       <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>

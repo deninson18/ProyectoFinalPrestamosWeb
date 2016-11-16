@@ -36,7 +36,7 @@ namespace BLL
             try
             {
                 retorno = conexion.Ejecutar(String.Format("insert into Usuarios(Nombres,Apellidos,NombreUsuario,Contrasena,AreaUsuario,Foto) values('{0}','{1}','{2}','{3}','{4}','{5}')",
-                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario,this.Foto));
+                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.Foto));
 
             }
             catch (Exception ex)
@@ -91,19 +91,19 @@ namespace BLL
 
         public override bool Modificar()
         {
-                ConexionDb conexion = new ConexionDb();
-                bool retorno = false;
-                try
-                {
-                    retorno = conexion.Ejecutar(string.Format("update Usuarios set Nombres='{0}',Apellidos='{1}',NombreUsuario='{2}',Contrasena='{3}',AreaUsuario='{4}' where UsuarioId={5}",
-                        this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.UsuarioId));
+            ConexionDb conexion = new ConexionDb();
+            bool retorno = false;
+            try
+            {
+                retorno = conexion.Ejecutar(string.Format("update Usuarios set Nombres='{0}',Apellidos='{1}',NombreUsuario='{2}',Contrasena='{3}',AreaUsuario='{4}' where UsuarioId={5}",
+                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.UsuarioId));
 
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

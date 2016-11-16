@@ -12,6 +12,10 @@ namespace PrestamosWeb.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CargarDropDList();
+            }
 
         }
         private void CargarDatos(Clientes cliente)
@@ -19,6 +23,7 @@ namespace PrestamosWeb.Registros
             int id;
             int.TryParse(idClienteTextBox.Text, out id);
             cliente.ClienteId = id;
+            cliente.RutaId = Convert.ToInt32(rutaPDropDownList.SelectedValue);
             cliente.Nombres = nombreCliTextBox.Text;
             cliente.Apellidos = apellidoCliTextBox.Text;
             cliente.Apodos = apodoCliTextBox.Text;
@@ -41,6 +46,7 @@ namespace PrestamosWeb.Registros
 
         private void DevolverDatos(Clientes cliente)
         {
+            rutaPDropDownList.Text = cliente.RutaId.ToString();
             nombreCliTextBox.Text = cliente.Nombres;
             apellidoCliTextBox.Text = cliente.Apellidos;
             apodoCliTextBox.Text = cliente.Apodos;
@@ -60,6 +66,7 @@ namespace PrestamosWeb.Registros
         }
         private void Limpiar()
         {
+            rutaPDropDownList.SelectedIndex = 0;
             idClienteTextBox.Text = string.Empty;
             nombreCliTextBox.Text = string.Empty;
             apellidoCliTextBox.Text = string.Empty;
@@ -71,6 +78,15 @@ namespace PrestamosWeb.Registros
             celularCliTextBox.Text = string.Empty;
         }
 
+        private void CargarDropDList()
+        {
+            Rutas ruta = new Rutas();
+            rutaPDropDownList.DataSource = ruta.Listado("*", "1=1", "");
+            rutaPDropDownList.DataTextField = "NombreRuta";
+            rutaPDropDownList.DataValueField = "RutaId";
+            rutaPDropDownList.DataBind();
+        }
+
         protected void guardarCliButton_Click(object sender, EventArgs e)
         {
             Clientes cliente = new Clientes();
@@ -79,6 +95,7 @@ namespace PrestamosWeb.Registros
             if (cliente.Insertar())
             {
                 Response.Write("<script>alert('Guardo Exitosamente')</script>");
+                Limpiar();
             }
             else
             {

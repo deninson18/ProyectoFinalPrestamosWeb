@@ -16,21 +16,24 @@
     <asp:TextBox ID="fechaFinalPTextBox" runat="server"></asp:TextBox>
     <br />
     <br />
-    Cliente:<asp:DropDownList ID="clientePDropDownList" runat="server" Height="20px" Width="141px"></asp:DropDownList>
-    Ruta:<asp:DropDownList ID="rutaPDropDownList" runat="server" Height="20px" Width="141px"></asp:DropDownList>
+    Cliente:<asp:DropDownList ID="clientePDropDownList" runat="server" Height="20px" Width="141px" OnSelectedIndexChanged="clientePDropDownList_SelectedIndexChanged"></asp:DropDownList>
      <br />
     <asp:Label ID="Label4" runat="server" Text="Monto"></asp:Label>
-    <asp:TextBox ID="montoPTextBox" runat="server"></asp:TextBox>
+    <asp:TextBox ID="montoPTextBox" runat="server" OnTextChanged="montoPTextBox_TextChanged" ></asp:TextBox>
      <br/>   
-    <asp:Label ID="Label5" runat="server" Text="Valor Cuota:"></asp:Label>
-    <asp:TextBox ID="valorCuotaPTextBox" runat="server"></asp:TextBox>
-    <asp:Label ID="Label6" runat="server" Text="NuSemana:"></asp:Label>
-    <asp:TextBox ID="nuSemanaPTextBox" runat="server"></asp:TextBox>
+    <asp:Label ID="Label5" runat="server" Text="Cuota:"></asp:Label>
+    <asp:TextBox ID="CuotaPTextBox" runat="server" ></asp:TextBox>
+    <asp:Label ID="Label6" runat="server" Text="Semana #:"></asp:Label>
+    <asp:TextBox ID="nuSemanaPTextBox" runat="server" value="1"></asp:TextBox>
      <br />
-    <asp:Label ID="Label7" runat="server" Text="Semana"></asp:Label>
-    <asp:TextBox ID="semanaPTextBox" runat="server"></asp:TextBox>
+    <asp:Label ID="Label7" runat="server" Text="Cantidad"></asp:Label>
+    <asp:DropDownList ID="cantidadCuotaDropDownList" runat="server" Height="18px" Width="128px">
+        <asp:ListItem>13</asp:ListItem>
+    </asp:DropDownList>
     <asp:Label ID="Label9" runat="server" Text="Interes"></asp:Label>
-    <asp:TextBox ID="interesPTextBox" runat="server"></asp:TextBox>
+    <asp:DropDownList ID="interesDropDownList" runat="server" Height="16px" Width="64px">
+        <asp:ListItem Value="0.10 ">10%</asp:ListItem>
+    </asp:DropDownList>
      <br />
     <asp:Label ID="Label8" runat="server" Text="Pago Total:"></asp:Label>
     <asp:TextBox ID="PagoTotalPTextBox" runat="server"></asp:TextBox>

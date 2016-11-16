@@ -26,6 +26,7 @@ CobradorId int references Cobradores(CobradorId),
 NombreRuta varchar(100));
 
 create table Clientes(ClienteId int primary key identity(1,1),
+RutaId int references Rutas(RutaId),
 Nombres varchar(30),
 Apellidos varchar(30),
 Apodos varchar(30),
@@ -38,26 +39,57 @@ Celular varchar(14));
 
 create table Prestamos(PrestamoId int primary key identity(1,1),
 ClienteId int references Clientes(ClienteId),
-RutaId int references Rutas(RutaId),
 FechaInicial varchar(30),
 FechaVencimiento varchar(30),
 Monto float, 
 NuSemana int,
-Semana int,
-ValorCuota int,
+CantidadCuota float,
+Cuota float,
 Interes float,
 PagoTotal float);
+
+ Create table Cobros(CobroId int primary key identity(1,1),
+ RutaId int references Rutas(RutaId),
+ Total float
+ );
+
+ create table CobrosDetalle(CobroDetalleId int primary key identity(1,1),
+ PrestamosId int references Prestamos(PrestamosId),--cliente
+ Cedula varchar(15),
+ CantidadCuota int,
+ Cuota float,--No Aplica para no cobro
+ SubTotal float
+ );
+                         
+create table NoCobrados(NoCobradosId int identity primary key,
+RutaId int references Rutas(RutaId),
+Total float
+ );
+
+create table NoCobradosDetalle(NoCobradoId int identity primary key,
+PrestamoId int references Prestamos(PrestamoId),
+Cedula varchar(15),
+CuotaAtraso int,
+Mora float,--No Aplica para no cobro
+ SubTotal float)
+
 
 drop table Usuarios;
 drop table Cobradores;
 drop table Rutas;
 drop table Clientes;
 drop table Prestamos;
+drop table Cobros;
+drop table NoCobrados;
+drop table RutasCobradores;
 
 select * from Usuarios;
 select * from Cobradores;
 select * from Rutas;
 select * from Clientes;
 select * from Prestamos;
+select * from Cobros;
+select * from RutasCobradores;
 
 insert into Prestamos(ClienteId,RutaId,FechaInicial,FechaVencimiento,Monto,PagoTotal)values('1','1','10-10-2016','12-12-20166','2000','2600');
+insert into RutasCobradores(RutaId,CobradorId)values('1','2');

@@ -2,7 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     Buscar Por:<asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="101px">
         <asp:ListItem>Prestamo Id</asp:ListItem>
         <asp:ListItem>Nombre</asp:ListItem>

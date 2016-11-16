@@ -85,15 +85,6 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.DropDownList clientePDropDownList;
         
         /// <summary>
-        /// rutaPDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList rutaPDropDownList;
-        
-        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -121,13 +112,13 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// valorCuotaPTextBox control.
+        /// CuotaPTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox valorCuotaPTextBox;
+        protected global::System.Web.UI.WebControls.TextBox CuotaPTextBox;
         
         /// <summary>
         /// Label6 control.
@@ -157,13 +148,13 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// semanaPTextBox control.
+        /// cantidadCuotaDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox semanaPTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList cantidadCuotaDropDownList;
         
         /// <summary>
         /// Label9 control.
@@ -175,13 +166,13 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// interesPTextBox control.
+        /// interesDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox interesPTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList interesDropDownList;
         
         /// <summary>
         /// Label8 control.

@@ -10,6 +10,7 @@ namespace BLL
     public class Clientes : ClaseMaestra
     {
         public int ClienteId { get; set; }
+        public int RutaId { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Apodos { get; set; }
@@ -23,6 +24,7 @@ namespace BLL
         public Clientes()
         {
             this.ClienteId = 0;
+            this.RutaId = 0;
             this.Nombres = "";
             this.Apellidos = "";
             this.Apodos = "";
@@ -46,8 +48,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}')",
-                  this.Nombres, this.Apellidos, this.Apodos, this.Direccion, this.Referencia, this.Sexo, this.Cedula, this.Telefono, this.Celular));
+                retorno = conexion.Ejecutar(string.Format("insert into Clientes(RutaId,Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular) values({0},'{1}','{2}','{3}','{4}','{5}',{6},'{7}','{8}','{9}')",
+                  this.RutaId, this.Nombres, this.Apellidos, this.Apodos, this.Direccion, this.Referencia, this.Sexo, this.Cedula, this.Telefono, this.Celular));
 
             }
             catch(Exception ex)
@@ -64,7 +66,7 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Clientes set Nombres='{0}', Apellidos='{1}', Apodos='{2}', Direccion='{3}', Referencia='{4}', Sexo={5}, Cedula='{6}', Telefono='{7}', Celular='{8}' where ClienteId={9}",
+                retorno = conexion.Ejecutar(String.Format("update Clientes set RutaId={0} Nombres='{1}', Apellidos='{2}', Apodos='{3}', Direccion='{4}', Referencia='{5}', Sexo={6}, Cedula='{7}', Telefono='{8}', Celular='{9}' where ClienteId={10}",
                     this.Nombres,this.Apellidos,this.Apodos,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,this.ClienteId));
 
             }catch(Exception ex)
@@ -84,6 +86,7 @@ namespace BLL
                 dt = conexion.ObtenerDatos(String.Format(" Select * from Clientes where ClienteId = {0} ", Buscado));
                 if (dt.Rows.Count > 0)
                 {
+                    this.RutaId = (int)dt.Rows[0]["RutaId"];
                     this.ClienteId = (int)dt.Rows[0]["ClienteId"];
                     this.Nombres = dt.Rows[0]["Nombres"].ToString();
                     this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
