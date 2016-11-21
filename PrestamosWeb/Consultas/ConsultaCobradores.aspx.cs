@@ -26,8 +26,7 @@ namespace PrestamosWeb.Consultas
             Cobradores cobrador = new Cobradores();
             string Filtro = "";
 
-            //if (consultaCoDropDownList.SelectedIndex == 0)
-            //{
+           
             if (cobradorFTextBox.Text.Trim().Length == 0)
             {
                 Filtro = "1=1";
@@ -36,45 +35,7 @@ namespace PrestamosWeb.Consultas
             {
                 Filtro = consultaCoDropDownList.SelectedValue + " like '%" + cobradorFTextBox.Text + "%'";
             }
-            //        int id;
-            //        int.TryParse(cobradorFTextBox.Text, out id);
-            //        Filtro = "CobradorId= " + id.ToString();
-
-            //    }
-            //}
-            //else if (consultaCoDropDownList.SelectedIndex == 1)
-            //{
-            //    if (cobradorFTextBox.Text.Trim().Length == 0)
-            //    {
-            //        Filtro = "1=1";
-            //    }
-            //    else
-            //    {
-            //        Filtro = "Nombres like '%" + cobradorFTextBox.Text + "%'";
-            //    }
-            //}
-            //else if (consultaCoDropDownList.SelectedIndex == 2)
-            //{
-            //    if (cobradorFTextBox.Text.Trim().Length == 0)
-            //    {
-            //        Filtro = "1=1";
-            //    }
-            //    else
-            //    {
-            //        Filtro = "Apellidos like '%" + cobradorFTextBox.Text + "%'";
-            //    }
-            //}
-            //else if (consultaCoDropDownList.SelectedIndex == 3)
-            //{
-            //    if (cobradorFTextBox.Text.Trim().Length == 0)
-            //    {
-            //        Filtro = "1=1";
-            //    }
-            //    else
-            //    {
-            //        Filtro = "Cedula like '%" + cobradorFTextBox.Text + "%'";
-            //    }
-            //}
+            
 
             cobradoresGridView.DataSource = cobrador.Listado(" * ", Filtro, "");
             cobradoresGridView.DataBind();

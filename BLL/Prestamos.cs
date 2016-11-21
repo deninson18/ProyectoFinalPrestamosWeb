@@ -138,8 +138,9 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos("select" + Campos + "from Prestamos where" + Condicion + Orden);
-        }
+            return conexion.ObtenerDatos(("Select PrestamoId,CL.ClienteId,CL.Nombres,FechaInicial,FechaVencimiento,Monto,NuSemana,CantidadCuota,Interes,PagoTotal from Prestamos as P inner join Clientes as CL on CL.ClienteId=P.ClienteId where " + Condicion + Orden));
+   
+    }
 
         public DataTable ListadoDt(string Condicion)
         {

@@ -181,7 +181,7 @@
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="userControl\WebUserControlCobrador.ascx" />
+    <Content Include="scripts\userControl\WebUserControlCobrador.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -301,11 +301,11 @@
     <Compile Include="Reportes\ReporteUsuario.aspx.designer.cs">
       <DependentUpon>ReporteUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userControl\WebUserControlCobrador.ascx.cs">
+    <Compile Include="scripts\userControl\WebUserControlCobrador.ascx.cs">
       <DependentUpon>WebUserControlCobrador.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="userControl\WebUserControlCobrador.ascx.designer.cs">
+    <Compile Include="scripts\userControl\WebUserControlCobrador.ascx.designer.cs">
       <DependentUpon>WebUserControlCobrador.ascx</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -12,9 +12,10 @@ namespace PrestamosWeb.Consultas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Rutas ruta = new Rutas();
+           
             if (!IsPostBack)
             {
+                Rutas ruta = new Rutas();
                 rutasGridView.DataSource = ruta.Listado("*", "1=1", "");
                 rutasGridView.DataBind();
             }
@@ -24,31 +25,16 @@ namespace PrestamosWeb.Consultas
         {
             Rutas ruta = new Rutas();
             string Filtro = "";
-            if (consultaRuDropDownList.SelectedIndex == 0)
-            {
+           
                 if (rutaFTextBox.Text.Trim().Length == 0)
                 {
                     Filtro = "1=1";
                 }
                 else
                 {
-                    int id;
-                    int.TryParse(rutaFTextBox.Text, out id);
-                    Filtro = "RutaId" + id.ToString();
+                Filtro = consultaRuDropDownList.SelectedValue + " like '%" + rutaFTextBox.Text + "%'";
                 }
-            }
-            else if (consultaRuDropDownList.SelectedIndex == 1)
-            {
-                if (rutaFTextBox.Text.Trim().Length == 0)
-                {
-                    Filtro = "1=1";
-                }
-                else
-                {
-                    Filtro = "NombreRuta like '%" + rutaFTextBox.Text + "%'";
-                }
-            }
-
+           
             rutasGridView.DataSource = ruta.Listado(" * ", Filtro, "");
             rutasGridView.DataBind();
         }

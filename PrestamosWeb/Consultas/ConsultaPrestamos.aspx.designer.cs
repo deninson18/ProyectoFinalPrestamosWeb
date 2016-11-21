@@ -13,22 +13,22 @@ namespace PrestamosWeb.Consultas {
     public partial class ConsultaPrestamos {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ConsultaPrestamosDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ConsultaPrestamosDropDownList;
         
         /// <summary>
-        /// TextBox1 control.
+        /// PrestamoFTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox PrestamoFTextBox;
         
         /// <summary>
         /// consultaPrestamoButton control.
@@ -40,13 +40,13 @@ namespace PrestamosWeb.Consultas {
         protected global::System.Web.UI.WebControls.Button consultaPrestamoButton;
         
         /// <summary>
-        /// GridView1 control.
+        /// PrestamosGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView PrestamosGridView;
         
         /// <summary>
         /// imprimirPrestamoButton control.

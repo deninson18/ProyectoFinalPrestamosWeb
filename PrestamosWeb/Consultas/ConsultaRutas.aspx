@@ -8,8 +8,8 @@
      <br/>
     <asp:Label ID="Label1" runat="server" Text="Buscar Por:"></asp:Label>
     <asp:DropDownList ID="consultaRuDropDownList" runat="server" Height="23px" Width="136px">
-        <asp:ListItem>ID</asp:ListItem>
-        <asp:ListItem>Nombre</asp:ListItem>
+        <asp:ListItem Value="RutaId">ID</asp:ListItem>
+        <asp:ListItem Value="NombreRuta">Nombre</asp:ListItem>
     </asp:DropDownList>
     <asp:TextBox ID="rutaFTextBox" runat="server"></asp:TextBox>
     <asp:Button ID="consultaRutaButton" runat="server" Text="BUSCAR" OnClick="consultaRutaButton_Click"  />
