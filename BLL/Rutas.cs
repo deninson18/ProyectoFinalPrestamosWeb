@@ -107,7 +107,7 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos("Select " + Campos + " From Cobradores as C inner join Rutas as R on C.CobradorId=R.CobradorId Where " + Condicion + Orden);
+            return conexion.ObtenerDatos("Select RutaId, C.CobradorId, C.Nombres, NombreRuta from Rutas as R inner join Cobradores as C on C.CobradorId=R.CobradorId Where " + Condicion + Orden); 
         }
 
        

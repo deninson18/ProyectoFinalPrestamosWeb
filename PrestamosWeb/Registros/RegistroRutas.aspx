@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="RegistroRutas.aspx.cs" Inherits="PrestamosWeb.Registros.RegistroRutas" %>
+<%@ Register src="../userControl/WebUserControlCobrador.ascx" tagname="WebUserControlCobrador" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,6 +18,7 @@
        
     Cobrador:<asp:DropDownList ID="cobradorRuDropDownList" runat="server" Height="16px" Width="127px">
     </asp:DropDownList>
+        <uc1:WebUserControlCobrador ID="WebUserControlCobrador1" runat="server" />
     <br />
     <br />
     <asp:Button class="btn btn-info" ID="nuevoRuButton" runat="server" Text="NUEVO" OnClick="nuevoRuButton_Click" />

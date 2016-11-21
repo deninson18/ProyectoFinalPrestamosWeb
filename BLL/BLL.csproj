@@ -42,6 +42,8 @@
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Cobradores.cs" />
+    <Compile Include="Cobros.cs" />
+    <Compile Include="CobrosDetalle.cs" />
     <Compile Include="Prestamos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutas.cs" />

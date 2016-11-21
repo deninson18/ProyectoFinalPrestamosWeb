@@ -154,6 +154,7 @@
     <Content Include="assets\plugins\vegas\overlays\13.png" />
     <Content Include="assets\plugins\vegas\overlays\14.png" />
     <Content Include="assets\plugins\vegas\overlays\15.png" />
+    <Content Include="Consultas\ConsultaCliente.aspx" />
     <Content Include="Consultas\ConsultaCobradores.aspx" />
     <Content Include="Consultas\ConsultaPrestamos.aspx" />
     <Content Include="Consultas\ConsultaRutas.aspx" />
@@ -162,6 +163,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Fotos\Deninson.jpg" />
     <Content Include="PrestamoWebDBDataSet.xsc">
       <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
     </Content>
@@ -171,6 +173,7 @@
     <Content Include="Principal.aspx" />
     <Content Include="Registros\RegistroClientes.aspx" />
     <Content Include="Registros\RegistroCobradores.aspx" />
+    <Content Include="Registros\RegistroCobros.aspx" />
     <Content Include="Registros\RegistroPrestamos.aspx" />
     <Content Include="Registros\RegistroRutas.aspx" />
     <Content Include="Registros\RegistroUsuarios.aspx" />
@@ -178,9 +181,17 @@
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="userControl\WebUserControlCobrador.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaCliente.aspx.cs">
+      <DependentUpon>ConsultaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaCliente.aspx.designer.cs">
+      <DependentUpon>ConsultaCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaCobradores.aspx.cs">
       <DependentUpon>ConsultaCobradores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +259,13 @@
     <Compile Include="Registros\RegistroCobradores.aspx.designer.cs">
       <DependentUpon>RegistroCobradores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registros\RegistroCobros.aspx.cs">
+      <DependentUpon>RegistroCobros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroCobros.aspx.designer.cs">
+      <DependentUpon>RegistroCobros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroPrestamos.aspx.cs">
       <DependentUpon>RegistroPrestamos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +300,13 @@
     </Compile>
     <Compile Include="Reportes\ReporteUsuario.aspx.designer.cs">
       <DependentUpon>ReporteUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\WebUserControlCobrador.ascx.cs">
+      <DependentUpon>WebUserControlCobrador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControl\WebUserControlCobrador.ascx.designer.cs">
+      <DependentUpon>WebUserControlCobrador.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

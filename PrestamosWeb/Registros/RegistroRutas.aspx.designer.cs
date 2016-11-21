@@ -49,6 +49,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.DropDownList cobradorRuDropDownList;
         
         /// <summary>
+        /// WebUserControlCobrador1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::PrestamosWeb.userControl.WebUserControlCobrador WebUserControlCobrador1;
+        
+        /// <summary>
         /// nuevoRuButton control.
         /// </summary>
         /// <remarks>

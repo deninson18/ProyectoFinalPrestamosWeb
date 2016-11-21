@@ -8,7 +8,8 @@ Nombres varchar(30),
 Apellidos varchar(30),
 NombreUsuario varchar(40),
 Contrasena varchar(50),
-AreaUsuario varchar(30),
+ConfirmarContrasena varchar(50),
+TipoUsuario varchar(30),
 Foto varchar(100));
 
 create table Cobradores(
@@ -49,14 +50,17 @@ Interes float,
 PagoTotal float);
 
  Create table Cobros(CobroId int primary key identity(1,1),
- RutaId int references Rutas(RutaId),
+ ClienteId int references Clientes(ClienteId),
+ Abono float,
  Total float
  );
 
  create table CobrosDetalle(CobroDetalleId int primary key identity(1,1),
- PrestamosId int references Prestamos(PrestamosId),--cliente
+ PrestamoId int references Prestamos(PrestamoId),--cliente
+ CobroId int references Cobros(CobroId),
  Cedula varchar(15),
- CantidadCuota int,
+ NuSemana int,
+ CantidadCuota float,
  Cuota float,--No Aplica para no cobro
  SubTotal float
  );
@@ -80,6 +84,7 @@ drop table Rutas;
 drop table Clientes;
 drop table Prestamos;
 drop table Cobros;
+drop table CobrosDetalle;
 drop table NoCobrados;
 drop table RutasCobradores;
 
@@ -89,7 +94,7 @@ select * from Rutas;
 select * from Clientes;
 select * from Prestamos;
 select * from Cobros;
-select * from RutasCobradores;
+select * from CobrosDetalle;
 
 insert into Prestamos(ClienteId,RutaId,FechaInicial,FechaVencimiento,Monto,PagoTotal)values('1','1','10-10-2016','12-12-20166','2000','2600');
 insert into RutasCobradores(RutaId,CobradorId)values('1','2');

@@ -10,132 +10,177 @@
 namespace PrestamosWeb.Registros {
     
     
-    public partial class RegistroUsuarios {
+    public partial class RegistroCobros {
         
         /// <summary>
-        /// fotoFileUpload control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fotoFileUpload;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// cargarImagen control.
+        /// cobroIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cargarImagen;
+        protected global::System.Web.UI.WebControls.TextBox cobroIdTextBox;
         
         /// <summary>
-        /// Fotos control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Fotos;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// idUTextBox control.
+        /// clienteCobroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idUTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList clienteCobroDropDownList;
         
         /// <summary>
-        /// buscarUButton control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buscarUButton;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// nombreUTextBox control.
+        /// semanaNuCobroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreUTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList semanaNuCobroDropDownList;
         
         /// <summary>
-        /// apellidoUTextBox control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apellidoUTextBox;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// nombreUsuarioTextBox control.
+        /// cantidadCuotaCobroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
+        protected global::System.Web.UI.WebControls.TextBox cantidadCuotaCobroTextBox;
         
         /// <summary>
-        /// contrasenaUTextBox control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox contrasenaUTextBox;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// confirmarContrasenaTextBox control.
+        /// cuotaCobroDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirmarContrasenaTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList cuotaCobroDropDownList;
         
         /// <summary>
-        /// usuarioUDropDownList control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList usuarioUDropDownList;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// nuevoUButton control.
+        /// abonoCobroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button nuevoUButton;
+        protected global::System.Web.UI.WebControls.TextBox abonoCobroTextBox;
         
         /// <summary>
-        /// guardarUButton control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarUButton;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// eliminarUButton control.
+        /// subtotalCobroTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button eliminarUButton;
+        protected global::System.Web.UI.WebControls.TextBox subtotalCobroTextBox;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// nuevoButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button nuevoButton;
+        
+        /// <summary>
+        /// guardarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button guardarButton;
+        
+        /// <summary>
+        /// eliminarButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button eliminarButton;
     }
 }

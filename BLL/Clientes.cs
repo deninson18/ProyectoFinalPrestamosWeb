@@ -132,7 +132,7 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos(("Select " + Campos + " from Clientes where " + Condicion + Orden));
+            return conexion.ObtenerDatos(("Select ClienteId,R.RutaId,R.NombreRuta,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula from Clientes as Cl inner join Rutas as R on R.RutaId=Cl.RutaId where " + Condicion + Orden));
         }
 
        

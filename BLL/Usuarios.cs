@@ -14,7 +14,8 @@ namespace BLL
         public string Apellidos { get; set; }
         public string NombreUsuario { get; set; }
         public string Contrasena { get; set; }
-        public string AreaUsuario { get; set; }
+        public string ConfirmarContrasena { get; set; }
+        public string TipoUsuario { get; set; }
         public string Foto { get; set; }
 
         public Usuarios()
@@ -24,7 +25,8 @@ namespace BLL
             this.Apellidos = "";
             this.NombreUsuario = "";
             this.Contrasena = "";
-            this.AreaUsuario = "";
+            this.ConfirmarContrasena = "";
+            this.TipoUsuario = "";
             this.Foto = "";
 
         }
@@ -35,8 +37,8 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into Usuarios(Nombres,Apellidos,NombreUsuario,Contrasena,AreaUsuario,Foto) values('{0}','{1}','{2}','{3}','{4}','{5}')",
-                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.Foto));
+                retorno = conexion.Ejecutar(String.Format("insert into Usuarios(Nombres,Apellidos,NombreUsuario,Contrasena,ConfirmarContrasena,TipoUsuario,Foto) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena,this.ConfirmarContrasena, this.TipoUsuario, this.Foto));
 
             }
             catch (Exception ex)
@@ -78,7 +80,9 @@ namespace BLL
                     this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
                     this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
                     this.Contrasena = dt.Rows[0]["Contrasena"].ToString();
-                    this.AreaUsuario = dt.Rows[0]["AreaUsuario"].ToString();
+                    this.ConfirmarContrasena = dt.Rows[0]["ConfirmarContrasena"].ToString();
+                    this.TipoUsuario = dt.Rows[0]["TipoUsuario"].ToString();
+                    this.Foto= dt.Rows[0]["Foto"].ToString();
                 }
                 return dt.Rows.Count > 0;
 
@@ -95,8 +99,8 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("update Usuarios set Nombres='{0}',Apellidos='{1}',NombreUsuario='{2}',Contrasena='{3}',AreaUsuario='{4}' where UsuarioId={5}",
-                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.UsuarioId));
+                retorno = conexion.Ejecutar(string.Format("update Usuarios set Nombres='{0}',Apellidos='{1}',NombreUsuario='{2}',Contrasena='{3}',ConfirmarContrasena='{4}',TipoUsuario='{5}',Foto='{6}' where UsuarioId={7}",
+                    this.Nombres, this.Apellidos, this.NombreUsuario, this.Contrasena,this.ConfirmarContrasena, this.TipoUsuario,this.Foto, this.UsuarioId));
 
             }
             catch (Exception ex)

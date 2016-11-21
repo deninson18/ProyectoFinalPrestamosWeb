@@ -25,30 +25,32 @@ namespace PrestamosWeb.Registros
             usuario.Apellidos = apellidoUTextBox.Text;
             usuario.NombreUsuario = nombreUsuarioTextBox.Text;
             usuario.Contrasena = contrasenaUTextBox.Text;
-            usuario.AreaUsuario = usuarioUDropDownList.SelectedValue;
-            try
-            {
-                if (fileUploader1.HasFile)
-                {
-                    // Se verifica que la extensión sea de un formato válido
-                    string ext = fileUploader1.PostedFile.FileName;
-                    ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-                    string[] formatos =
-                      new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
-                    if (Array.IndexOf(formatos, ext) < 0)
+            usuario.ConfirmarContrasena = confirmarContrasenaTextBox.Text;
+            usuario.TipoUsuario = usuarioUDropDownList.SelectedValue;
+            usuario.Foto = Fotos.ImageUrl;
+            //try
+            //{
+            //    if (fileUploader1.HasFile)
+            //    {
+            //        // Se verifica que la extensión sea de un formato válido
+            //        string ext = fileUploader1.PostedFile.FileName;
+            //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+            //        string[] formatos =
+            //          new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+            //        if (Array.IndexOf(formatos, ext) < 0)
 
-                        Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
-                        GuardarArchivo(fileUploader1.PostedFile);
-                        usuario.Foto= @"C:\Users\walle1\Desktop\Aplicada II\PrestamosWebAp2\PrestamosWeb\PrestamosWeb\temp\" + fileUploader1.FileName;
-                }
-                else
-                    Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
+            //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
+            //            GuardarArchivo(fileUploader1.PostedFile);
+            //            usuario.Foto= @"C:\Users\walle1\Desktop\Aplicada II\PrestamosWebAp2\PrestamosWeb\PrestamosWeb\temp\" + fileUploader1.FileName;
+            //    }
+            //    else
+            //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
            
         }
 
@@ -59,7 +61,8 @@ namespace PrestamosWeb.Registros
             apellidoUTextBox.Text = usuario.Apellidos;
             nombreUsuarioTextBox.Text = usuario.NombreUsuario;
             contrasenaUTextBox.Text = usuario.Contrasena;
-            usuarioUDropDownList.SelectedValue = usuario.AreaUsuario;
+            usuarioUDropDownList.SelectedValue = usuario.TipoUsuario;
+            Fotos.ImageUrl = usuario.Foto;
         }
 
         public void Limpiar()
@@ -69,7 +72,9 @@ namespace PrestamosWeb.Registros
             apellidoUTextBox.Text = string.Empty;
             nombreUsuarioTextBox.Text = string.Empty;
             contrasenaUTextBox.Text = string.Empty;
+            confirmarContrasenaTextBox.Text = string.Empty;
             usuarioUDropDownList.SelectedIndex = 0;
+            Fotos.ImageUrl = "/Fotos/images.png";
         }
 
 
@@ -140,53 +145,61 @@ namespace PrestamosWeb.Registros
             }
         }
 
-        private void GuardarArchivo(HttpPostedFile file)
-        {
-            // Se carga la ruta física de la carpeta temp del sitio
-            string ruta = Server.MapPath("~/temp");
+        //private void GuardarArchivo(HttpPostedFile file)
+        //{
+        //    // Se carga la ruta física de la carpeta temp del sitio
+        //    string ruta = Server.MapPath("~/temp");
 
-            // Si el directorio no existe, crearlo
-            if (!Directory.Exists(ruta))
-                Directory.CreateDirectory(ruta);
+        //    // Si el directorio no existe, crearlo
+        //    if (!Directory.Exists(ruta))
+        //        Directory.CreateDirectory(ruta);
 
-            string archivo = String.Format("{0}\\{1}", ruta, file.FileName);
+        //    string archivo = String.Format("{0}\\{1}", ruta, file.FileName);
 
-            // Verificar que el archivo no exista
-            if (File.Exists(archivo))
-                Response.Write("<script>alert('Ya existe una imagen con nombre," + file.FileName + "')</script>");
-            else {
-                file.SaveAs(archivo);
-                Response.Write("<script>alert('" + "/temp/" + file.FileName + "')</script>");
-            }
+        //    // Verificar que el archivo no exista
+        //    if (File.Exists(archivo))
+        //        Response.Write("<script>alert('Ya existe una imagen con nombre," + file.FileName + "')</script>");
+        //    else {
+        //        file.SaveAs(archivo);
+        //        Response.Write("<script>alert('" + "/temp/" + file.FileName + "')</script>");
+        //    }
 
-        }
+        //}
 
         protected void cargarImagen_Click(object sender, EventArgs e)
         {
-
-            try
+            Usuarios usuario = new Usuarios();
+            usuario.Foto = "/Fotos/" + fotoFileUpload.FileName;
+            fotoFileUpload.SaveAs(Server.MapPath("/Fotos/" + fotoFileUpload.FileName));
+            if (fotoFileUpload.HasFile)
             {
-                if (fileUploader1.HasFile)
-                {
-                    // Se verifica que la extensión sea de un formato válido
-                    string ext = fileUploader1.PostedFile.FileName;
-                    ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-                    string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
-                    if (Array.IndexOf(formatos, ext) < 0)
 
-                        Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
-                    GuardarArchivo(fileUploader1.PostedFile);
-
-                    // GuardarBD(fileUploader1.PostedFile);
-                }
-                else
-                    Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
-
+                Fotos.ImageUrl = "/Fotos/" + fotoFileUpload.FileName;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+
+            //try
+            //{
+            //    if (fileUploader1.HasFile)
+            //    {
+            //        // Se verifica que la extensión sea de un formato válido
+            //        string ext = fileUploader1.PostedFile.FileName;
+            //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+            //        string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+            //        if (Array.IndexOf(formatos, ext) < 0)
+
+            //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
+            //        GuardarArchivo(fileUploader1.PostedFile);
+
+            //        // GuardarBD(fileUploader1.PostedFile);
+            //    }
+            //    else
+            //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
         }
     }
 }
