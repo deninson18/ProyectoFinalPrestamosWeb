@@ -91,7 +91,7 @@ namespace PrestamosWeb.Registros
 
             if (usuario.Insertar())
             {
-                Response.Write("<script>alert('Guardo Exitosamente')</script>");
+                Utility.ShowToastr(this, "Guardo Correctamente", "Message", "SUCCESS");
             }
             else
             {
@@ -166,16 +166,6 @@ namespace PrestamosWeb.Registros
 
         //}
 
-        protected void cargarImagen_Click(object sender, EventArgs e)
-        {
-            Usuarios usuario = new Usuarios();
-            usuario.Foto = "/Fotos/" + fotoFileUpload.FileName;
-            fotoFileUpload.SaveAs(Server.MapPath("/Fotos/" + fotoFileUpload.FileName));
-            if (fotoFileUpload.HasFile)
-            {
-
-                Fotos.ImageUrl = "/Fotos/" + fotoFileUpload.FileName;
-            }
 
             //try
             //{
@@ -200,6 +190,22 @@ namespace PrestamosWeb.Registros
             //{
             //    throw ex;
             //}
+      
+
+       
+           
+
+        protected void cargarImagen_Click1(object sender, EventArgs e)
+        {
+            Usuarios usuario = new Usuarios();
+            usuario.Foto = "/Fotos/" + fotoFileUpload.FileName;
+            fotoFileUpload.SaveAs(Server.MapPath("/Fotos/" + fotoFileUpload.FileName));
+            if (fotoFileUpload.HasFile)
+            {
+
+                Fotos.ImageUrl = "/Fotos/" + fotoFileUpload.FileName;
+            }
         }
+    
     }
 }

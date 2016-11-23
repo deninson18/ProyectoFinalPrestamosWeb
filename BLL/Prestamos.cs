@@ -138,7 +138,7 @@ namespace BLL
             {
                 OrdenFinal = "Ordenar Por " + Orden;
             }
-            return conexion.ObtenerDatos(("Select PrestamoId,CL.ClienteId,CL.Nombres,FechaInicial,FechaVencimiento,Monto,NuSemana,CantidadCuota,Interes,PagoTotal from Prestamos as P inner join Clientes as CL on CL.ClienteId=P.ClienteId where " + Condicion + Orden));
+            return conexion.ObtenerDatos(("Select PrestamoId,CL.ClienteId,CL.Nombres,R.NombreRuta,FechaInicial,FechaVencimiento,Monto,NuSemana,CantidadCuota,Interes,PagoTotal from Prestamos as P inner join Clientes as CL on CL.ClienteId=P.ClienteId inner join Rutas R on R.RutaId=CL.RutaId where " + Condicion + Orden));
    
     }
 

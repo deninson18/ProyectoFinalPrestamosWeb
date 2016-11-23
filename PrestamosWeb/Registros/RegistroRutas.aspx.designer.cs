@@ -13,6 +13,15 @@ namespace PrestamosWeb.Registros {
     public partial class RegistroRutas {
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// idRutaTextBox control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Button buscarRuButton;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// nombreRuTextBox control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.TextBox nombreRuTextBox;
         
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
         /// cobradorRuDropDownList control.
         /// </summary>
         /// <remarks>
@@ -47,15 +74,6 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cobradorRuDropDownList;
-        
-        /// <summary>
-        /// WebUserControlCobrador1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::PrestamosWeb.userControl.WebUserControlCobrador WebUserControlCobrador1;
         
         /// <summary>
         /// nuevoRuButton control.

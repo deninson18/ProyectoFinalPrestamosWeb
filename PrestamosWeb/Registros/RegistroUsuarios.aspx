@@ -3,44 +3,101 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class=" panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="text-center color-bg-one ">REGISTRO USUARIO</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <asp:Image ID="Fotos" class="img-circle" runat="server" ImageUrl="/Fotos/user.png" Width="162" Height="132" />
+                            <asp:FileUpload ID="fotoFileUpload" runat="server" ViewStateMode="Enabled" />
+                            <asp:Button ID="cargarImagen" runat="server" Text="Cargar imágenes" Height="23px" Width="102px" OnClick="cargarImagen_Click1" />
 
-    <div>
-        <br />
-        <br />
-        <br />
-        <br/>
-        <p>
-             <%--<asp:Label AssociatedControlId="fileUploader1" runat="server"  Text="Seleccionar una imagen:" />
-      <asp:FileUpload id="fileUploader1" runat="server"  ViewStateMode="Enabled"/>--%>
-            <asp:FileUpload ID="fotoFileUpload" runat="server" ViewStateMode="Enabled" />
-        </p>
-        <asp:Button ID="cargarImagen" runat="server" Text="Cargar imágenes" OnClick="cargarImagen_Click" Height="23px" Width="102px" />
-        <asp:Image ID="Fotos" runat="server" ImageUrl="/Fotos/images.png" Height="31px" Width="66px" />
-        <%-- <asp:LinkButton ID="cargarImagen" runat="server">LinkButton</asp:LinkButton>--%>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-inline">
+                                <div>
+                                    <asp:Label ID="Label7" runat="server" Text="USUARIO ID:" Font-Bold="True"></asp:Label>
+                                </div>
+                                <asp:TextBox ID="idUTextBox" runat="server" placeholder="ID" CssClass="form-control" Width="250px" Height="32px" MaxLength="8"></asp:TextBox>
+                                <asp:Button ID="buscarUButton" class="btn btn-warning " runat="server" OnClick="buscarUButton_Click" Text="BUSCAR" Width="84px" />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="idUTextBox" ErrorMessage="ID Incorrecto" Font-Size="Medium" ForeColor="Red" ValidationExpression="[0-9]{1,9}(\.[0-9]{0,2})?$">*</asp:RegularExpressionValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label1" runat="server" Text="NOMBRE:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="nombreUTextBox" runat="server" placeholder="Nombres" CssClass="form-control" Width="356px" Height="32px" MaxLength="30"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="nombreUTextBox" ErrorMessage="Formato Incorrecto" ForeColor="Red" ValidationExpression="^[a-zA-Z/s]{3,60}$" Font-Size="Medium">*</asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="INGRESE SU NOMBRE" ControlToValidate="nombreUTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label2" runat="server" Text="APELLIDO:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="apellidoUTextBox" runat="server" placeholder="Apellidos" Width="356px" Height="32px" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="apellidoUTextBox" ErrorMessage="Formato Incorrecto" ValidationExpression="^[a-zA-Z/s]{3,60}$" Font-Size="Medium" ForeColor="Red">*</asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="apellidoUTextBox" ErrorMessage="INGRESE SU APELLIDO" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label3" runat="server" Text="Nombre de Usuario:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="nombreUsuarioTextBox" runat="server" placeholder="Usuario" Width="356px" Height="32px" CssClass="form-control" MaxLength="40"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" ErrorMessage="Nombre de Usuario Incorrecto" Font-Size="Medium" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ\s]{2,50}">*</asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" ErrorMessage="INGRESE SU NOMBRE DE USUARIO" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label4" runat="server" Text="PASSWORD:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="contrasenaUTextBox" runat="server" placeholder="Contraseña" Width="356px" Height="32px" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="contrasenaUTextBox" ErrorMessage="INGRESE SU CONTRASEÑA" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label5" runat="server" Text="CONFIRMAR CONTRASEÑA:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:TextBox ID="confirmarContrasenaTextBox" runat="server" placeholder="Confirmar la Contraseña" Width="356px" Height="32px" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="CONFIRME SU CONTRASEÑA" ForeColor="Red" ControlToValidate="confirmarContrasenaTextBox"></asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <asp:Label ID="Label6" runat="server" Text="TIPO DE USUARIO:" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div>
+                                <asp:DropDownList ID="usuarioUDropDownList" runat="server" Width="356px" Height="32px" Style="margin-left: 8px" CssClass="form-control">
+                                    <asp:ListItem>ADMIN</asp:ListItem>
+                                    <asp:ListItem>USER</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div>
+                            <asp:Button Class="btn btn-info" ID="nuevoUButton" runat="server" OnClick="nuevoUButton_Click" Text="NUEVO" Width="84px" />
+                            <asp:Button Class="btn btn-success" ID="guardarUButton" runat="server" OnClick="guardarUButton_Click" Text="GUARDAR" Width="84px" />
+                            <asp:Button Class="btn btn-danger" ID="eliminarUButton" runat="server" OnClick="eliminarUButton_Click" Text="ELIMINAR" Width="84px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    USUARIO ID:<asp:TextBox ID="idUTextBox" runat="server"></asp:TextBox>
-    <asp:Button ID="buscarUButton" runat="server" OnClick="buscarUButton_Click" Text="BUSCAR" />
-    <br />
-    NOMBRE:<asp:TextBox ID="nombreUTextBox" runat="server" Width="185px"></asp:TextBox>
-    <br />
-    APELLIDO:<asp:TextBox ID="apellidoUTextBox" runat="server" Width="174px"></asp:TextBox>
-    <br />
-    NOMBRE DE USUARIO:<asp:TextBox ID="nombreUsuarioTextBox" runat="server" Width="146px"></asp:TextBox>
-    <br />
-    PASSWORD:<asp:TextBox ID="contrasenaUTextBox" runat="server" Width="207px"></asp:TextBox>
-    <br />
-    Confirmar Contrasena<asp:TextBox ID="confirmarContrasenaTextBox" runat="server" Width="207"></asp:TextBox>
-    <br />
-    AREA DE USUARIO:<asp:DropDownList ID="usuarioUDropDownList" runat="server" Height="16px" Style="margin-left: 8px" Width="158px">
-        <asp:ListItem>ADMIN</asp:ListItem>
-        <asp:ListItem>USER</asp:ListItem>
-    </asp:DropDownList>
-    <br />
-    <br />
-    <asp:Button Class="btn btn-info" ID="nuevoUButton" runat="server" OnClick="nuevoUButton_Click" Text="NUEVO" />
-    <asp:Button Class="btn btn-danger" ID="guardarUButton" runat="server" OnClick="guardarUButton_Click" Style="margin-left: 64px" Text="GUARDAR" Width="84px" />
-    <asp:Button Class="btn btn-success" ID="eliminarUButton" runat="server" OnClick="eliminarUButton_Click" Style="margin-left: 61px" Text="ELIMINAR" />
-    <br />
-
 </asp:Content>
