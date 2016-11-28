@@ -10,7 +10,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class=" panel panel-success">
                     <div class="panel-heading">
                         <h4 class="text-center color-bg-one ">REGISTRO RUTAS</h4>
@@ -29,7 +29,7 @@
                             <div>
                                 <asp:Label ID="Label2" runat="server" Text=" Nombre de Ruta:" Font-Bold="True"></asp:Label>
                             </div>
-                            <asp:TextBox ID="nombreRuTextBox" runat="server" placeholder="Nombre de la Ruta" CssClass="form-control" Width="356px" Height="32px"></asp:TextBox>
+                            <asp:TextBox ID="nombreRuTextBox" runat="server" placeholder="Ruta" CssClass="form-control" Width="356px" Height="32px"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <div>

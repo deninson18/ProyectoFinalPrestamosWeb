@@ -18,9 +18,9 @@ namespace PrestamosWeb.Registros
 
         public void CargarDatos(Usuarios usuario)
         {
-            int id = 0;
-            int.TryParse(idUTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idUTextBox.Text);
             usuario.UsuarioId = id;
+
             usuario.Nombres = nombreUTextBox.Text;
             usuario.Apellidos = apellidoUTextBox.Text;
             usuario.NombreUsuario = nombreUsuarioTextBox.Text;
@@ -51,9 +51,7 @@ namespace PrestamosWeb.Registros
             //{
             //    throw ex;
             //}
-           
         }
-
         public void DevolverDatos(Usuarios usuario)
         {
             idUTextBox.Text = usuario.UsuarioId.ToString();
@@ -67,7 +65,7 @@ namespace PrestamosWeb.Registros
 
         public void Limpiar()
         {
-           idUTextBox.Text = string.Empty;
+            idUTextBox.Text = string.Empty;
             nombreUTextBox.Text = string.Empty;
             apellidoUTextBox.Text = string.Empty;
             nombreUsuarioTextBox.Text = string.Empty;
@@ -88,38 +86,51 @@ namespace PrestamosWeb.Registros
             Usuarios usuario = new Usuarios();
 
             CargarDatos(usuario);
-
-            if (usuario.Insertar())
+            if (idUTextBox.Text.Length <= 0)
             {
-                Utility.ShowToastr(this, "Guardo Correctamente", "Message", "SUCCESS");
+                if (usuario.Insertar())
+                {
+                    Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                    nombreUTextBox.Focus();
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                }
             }
-            else
+            if (idUTextBox.Text.Length > 0)
             {
-                Response.Write("<script>alert('Error al Guardar')</script>");
+                CargarDatos(usuario);
+
+                if (usuario.Modificar())
+                {
+                    Utility.ShowToastr(this, "Edito Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                }
+                else
+                {
+                    Utility.ShowToastr(this, "Error Al Editar", "Message", "Warning");
+                }
             }
         }
-
         protected void eliminarUButton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
-            int id = 0;
-            int.TryParse(idUTextBox.Text, out id);
-            usuario.UsuarioId = id;
-
-
+            int id = Utility.ConvierteEntero(idUTextBox.Text);
             if (id > 0)
             {
                 CargarDatos(usuario);
                 if (usuario.Eliminar())
                 {
+
+
+                    Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
                     Limpiar();
-
-                    Response.Write("<script>alert('Elimino Correctamente')</script>");
-
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error al Eliminar')</script>");
+                    Utility.ShowToastr(this.Page, "Error al Eliminar", "Message", "Error");
                 }
 
             }
@@ -128,8 +139,7 @@ namespace PrestamosWeb.Registros
         protected void buscarUButton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
-            int id = 0;
-            int.TryParse(idUTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idUTextBox.Text);
 
             if (id > 0)
             {
@@ -139,7 +149,7 @@ namespace PrestamosWeb.Registros
                 }
                 else
                 {
-                    Response.Write("<script>alert('No existe Usuario ID')</script>");
+                    Utility.ShowToastr(this.Page, "NO EXISTE USUARIO ID", "Message", "Error");
                 }
 
             }
@@ -167,33 +177,33 @@ namespace PrestamosWeb.Registros
         //}
 
 
-            //try
-            //{
-            //    if (fileUploader1.HasFile)
-            //    {
-            //        // Se verifica que la extensión sea de un formato válido
-            //        string ext = fileUploader1.PostedFile.FileName;
-            //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-            //        string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
-            //        if (Array.IndexOf(formatos, ext) < 0)
+        //try
+        //{
+        //    if (fileUploader1.HasFile)
+        //    {
+        //        // Se verifica que la extensión sea de un formato válido
+        //        string ext = fileUploader1.PostedFile.FileName;
+        //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+        //        string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+        //        if (Array.IndexOf(formatos, ext) < 0)
 
-            //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
-            //        GuardarArchivo(fileUploader1.PostedFile);
+        //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
+        //        GuardarArchivo(fileUploader1.PostedFile);
 
-            //        // GuardarBD(fileUploader1.PostedFile);
-            //    }
-            //    else
-            //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
+        //        // GuardarBD(fileUploader1.PostedFile);
+        //    }
+        //    else
+        //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-      
+        //}
+        //catch (Exception ex)
+        //{
+        //    throw ex;
+        //}
 
-       
-           
+
+
+
 
         protected void cargarImagen_Click1(object sender, EventArgs e)
         {
@@ -206,6 +216,6 @@ namespace PrestamosWeb.Registros
                 Fotos.ImageUrl = "/Fotos/" + fotoFileUpload.FileName;
             }
         }
-    
+
     }
 }

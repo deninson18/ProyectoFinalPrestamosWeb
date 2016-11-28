@@ -50,19 +50,17 @@ Interes float,
 PagoTotal float);
 
  Create table Cobros(CobroId int primary key identity(1,1),
- ClienteId int references Clientes(ClienteId),
+FechaCobro Date,
  Abono float,
- Total float
+SubTotal float,
+Total float
  );
 
  create table CobrosDetalle(CobroDetalleId int primary key identity(1,1),
  PrestamoId int references Prestamos(PrestamoId),--cliente
  CobroId int references Cobros(CobroId),
- Cedula varchar(15),
  NuSemana int,
- CantidadCuota float,
  Cuota float,--No Aplica para no cobro
- SubTotal float
  );
                          
 create table NoCobrados(NoCobradosId int identity primary key,

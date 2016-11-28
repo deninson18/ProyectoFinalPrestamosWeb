@@ -56,11 +56,11 @@ namespace PrestamosWeb.Registros
 
             if (ruta.Insertar())
             {
-                Response.Write("<script>alert('Guardo Exitosamente')</script>");
+                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
             }
             else
             {
-                Response.Write("<script>alert('Error al Guardar')</script>");
+                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
             }
         }
 
@@ -82,11 +82,11 @@ namespace PrestamosWeb.Registros
                 if (ruta.Eliminar())
                 {
                     Limpiar();
-                    Response.Write("<script>alert('Elimino Exitosamente')</script>");
+                    Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error al eliminar')</script>");
+                    Utility.ShowToastr(this.Page, "Error al Eliminar", "Message", "Error");
                 }
 
             }
@@ -106,7 +106,7 @@ namespace PrestamosWeb.Registros
                 }
                 else
                 {
-                    Response.Write("<script>alert('No existe Cobrador ID')</script>");
+                    Utility.ShowToastr(this.Page, "NO EXISTE RUTA ID !", "Message", "Error");
                 }
 
             }

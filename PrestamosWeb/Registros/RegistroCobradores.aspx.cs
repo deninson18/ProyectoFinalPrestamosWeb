@@ -55,11 +55,11 @@ namespace PrestamosWeb.Registros
 
             if (cobrador.Insertar())
             {
-                Response.Write("<script>alert('Guardo Exitosamente')</script>");
+                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
             }
             else
             {
-                Response.Write("<script>alert('Error al Guardar')</script>");
+                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
             }
 
         }
@@ -83,12 +83,11 @@ namespace PrestamosWeb.Registros
                 {
                     Limpiar();
 
-                    Response.Write("<script>alert('Elimino Correctamente')</script>");
-
+                    Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error al Eliminar')</script>");
+                    Utility.ShowToastr(this.Page, "Error al Eliminar", "Message", "Error");
                 }
 
             }
@@ -108,7 +107,7 @@ namespace PrestamosWeb.Registros
                 }
                 else
                 {
-                    Response.Write("<script>alert('No existe Cobrador ID')</script>");
+                    Utility.ShowToastr(this.Page, "NO EXISTE COBRADOR ID !", "Message", "Error");
                 }
 
             }

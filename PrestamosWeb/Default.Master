@@ -4,12 +4,12 @@
 
 <html lang="en">
 <head runat="server">
-        <title> PrestamosRapidos</title>
+        <title> PRESTAMOS ONLINE</title>
     
     <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />--%>
      <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-     <link href="Content/toastr.min.css" rel="stylesheet" />
-    <script src="Content/toastr.min.js"></script>
+     <link href="/Content/toastr.min.css" rel="stylesheet" />
+    <script src="/Content/toastr.min.js"></script>
      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     
 
@@ -27,7 +27,7 @@
      <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body style="background-color:black">
     <form id="form1" runat="server">
 
         <nav class="navbar navbar-inverse navbar-fixed-top scrollclass color-bg-one " >
@@ -38,11 +38,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">YOUR LOGO</a>
+                <a class="nav navbar-brand " href="#">PRESTAMOS-ONLINE</a>
             </div>
+            <div class=" nav nav-pills">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">INICIO</a></li>
+                    <li><a href="/Principal.aspx#home">INICIO</a></li>
                      <li><a href="#">REGISTROS</a></li>
                      <li><a href="#about">ABOUT</a></li>
                     <li><a href="#clients-testimonial">TESTIMONIALS</a></li>
@@ -54,6 +55,7 @@
             </div>
            
         </div>
+            </div>
     </nav>
    
     

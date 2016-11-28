@@ -81,12 +81,11 @@ namespace PrestamosWeb.Registros
             CargarDatos(prestamo);
             if (prestamo.Insertar())
             {
-                Response.Write("<script>alert('Guardo Exitosamente')</script>");
-               // Limpiar();
+                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
             }
             else
             {
-                Response.Write("<script>alert('Error al Guardar')</script>");
+                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
             }
         }
 

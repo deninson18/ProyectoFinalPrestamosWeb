@@ -11,21 +11,25 @@ namespace BLL
     {
 
         public int CobroId { get; set; }
-        public float Abono { get; set; }
+        public string FechaCobro { get; set; }
+        public float  Abono { get; set; }
+        public float SubTotal { get; set; }
         public float Total { get; set; }
         public List<CobrosDetalle> ListaCobro { get; set; }
 
         public Cobros()
         {
             this.CobroId = 0;
+            this.FechaCobro = "";
             this.Abono = 0;
+            this.SubTotal = 0;
             this.Total = 0;
             this.ListaCobro = new List<CobrosDetalle>();
         }
 
-        public void AgregarCobros(int prestamoId, int nuSemana, float cantidadCuota, float cuota, float subTotal)
+        public void AgregarCobros(int prestamoId, int nuSemana, float cuota)
         {
-            ListaCobro.Add(new CobrosDetalle(prestamoId,nuSemana,cantidadCuota,cuota,subTotal));
+            ListaCobro.Add(new CobrosDetalle(prestamoId, nuSemana, cuota));
         }
 
 
@@ -35,12 +39,13 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             try
             {
-                retorno=Convert.ToInt32(conexion.ObtenerValor(string.Format("insert into Cobros(Abono,Total) values({0},{1}); select SCOPE_IDENTITY()",this.Abono,this.Total)));
-
+                retorno=Convert.ToInt32(conexion.ObtenerValor(string.Format("insert into Cobros(FechaCobro,Abono,SubTotal,Total) values('{0}',{1},{2},{3}); select SCOPE_IDENTITY()",
+                    this.FechaCobro,this.Abono,this.SubTotal,this.Total)));
+    
                 foreach (CobrosDetalle item in ListaCobro)
                 {
-                    conexion.Ejecutar(string.Format("insert into CobrosDetalle(PrestamoId,NuSemana,CantidadCuota,Cuota,SubTotal) values({0},{1},{2},{3},{4})",
-                        retorno, item.PrestamoId, item.NuSemana, item.CantidadCuota, item.Cuoata, item.SubTotal));
+                    conexion.Ejecutar(string.Format("insert into CobrosDetalle(CobroId,PrestamoId,NuSemana,Cuota) values({0},{1},{2},{3})",
+                        retorno, item.PrestamoId, item.NuSemana, item.Cuoata));
                 }
             }
             catch (Exception ex)
@@ -67,20 +72,74 @@ namespace BLL
         }
         public override bool Buscar(int Buscado)
         {
-            throw new NotImplementedException();
-        }
+            ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
 
-       
+            try
+            {
+                dt = conexion.ObtenerDatos(string.Format("select * from Cobros where CobroId={0}", Buscado));
+                if (dt.Rows.Count > 0)
+                {
+                    this.CobroId = (int)dt.Rows[0]["CobroId"];
+                    this.FechaCobro = dt.Rows[0]["FechaCobro"].ToString();
+                    this.Abono = (float)Convert.ToDecimal(dt.Rows[0]["Abono"].ToString());
+                    this.SubTotal = (float)Convert.ToDecimal(dt.Rows[0]["SubTotal"].ToString());
+                    this.Total = (float)Convert.ToDecimal(dt.Rows[0]["Total"].ToString());
 
-      
-        public override DataTable Listado(string Campos, string Condicion, string Orden)
-        {
-            throw new NotImplementedException();
+                    DataTable dtDetalle = new DataTable();
+
+                    dtDetalle = conexion.ObtenerDatos(string.Format("select * from CobrosDetalle where CobroId={0}", Buscado));
+                    foreach (DataRow row in dtDetalle.Rows)
+                    {
+                        AgregarCobros((int)row["PrestamoId"], (int)row["NuSemana"], (float)Convert.ToDecimal(row["Cuota"].ToString()));
+                    }
+
+                }
+                return dt.Rows.Count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public override bool Modificar()
         {
-            throw new NotImplementedException();
+            ConexionDb conexion = new ConexionDb();
+            bool retorno = false;
+            try
+            {
+                retorno = conexion.Ejecutar(string.Format("update Cobros set FechaCobro ='{0}', Abono={1}, SubTotal={2}, Total={3}  where CobroId={4} ",
+                    this.FechaCobro,this.Abono, this.SubTotal, this.Total));
+
+                if (retorno)
+                {
+                    retorno = conexion.Ejecutar(string.Format("delete from CobrosDetalle where CobroId={0}", this.CobroId));
+
+                    foreach (CobrosDetalle item in this.ListaCobro)
+                    {
+                        conexion.Ejecutar(string.Format("insert into CobrosDetalle(CobroId,PrestamoId,NuSemana,Cuota) values({0},{1},{2},{3})",
+                            this.CobroId, item.PrestamoId, item.NuSemana, item.Cuoata));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return retorno;
         }
+
+        public override DataTable Listado(string Campos, string Condicion, string Orden)
+        {
+            ConexionDb conexion = new ConexionDb();
+            string Order = "";
+            if (!Orden.Equals(""))
+            {
+                Order = "order bye";
+            }
+            return conexion.ObtenerDatos(string.Format("select " + Campos + " from Cobros where " + Condicion + Order));
+        }
+
     }
 }
