@@ -16,8 +16,7 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Cobradores cobrador)
         {
-            int id;
-            int.TryParse(idCoTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idCoTextBox.Text);
             cobrador.CobradorId = id;
             cobrador.Nombres = nombreCoTextBox.Text;
             cobrador.Apellidos = apellidoCoTextBox.Text;
@@ -52,16 +51,18 @@ namespace PrestamosWeb.Registros
         {
             Cobradores cobrador = new Cobradores();
             CargarDatos(cobrador);
-
-            if (cobrador.Insertar())
+            if (idCoTextBox.Text.Length <= 0)
             {
-                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
-            }
-            else
-            {
-                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
-            }
+                if (cobrador.Insertar())
+                {
+                    Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                }
 
+            }
         }
 
         protected void nuevoCoButton_Click(object sender, EventArgs e)
@@ -72,9 +73,7 @@ namespace PrestamosWeb.Registros
         protected void eliminarCoButton_Click(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
-            int id = 0;
-            int.TryParse(idCoTextBox.Text, out id);
-            cobrador.CobradorId = id;
+            int id = Utility.ConvierteEntero(idCoTextBox.Text);         
 
             if (id > 0)
             {
@@ -96,8 +95,8 @@ namespace PrestamosWeb.Registros
         protected void buscarCoButton_Click(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
-            int id = 0;
-            int.TryParse(idCoTextBox.Text, out id);
+           
+            int id = Utility.ConvierteEntero(idCoTextBox.Text);
 
             if (id > 0)
             {

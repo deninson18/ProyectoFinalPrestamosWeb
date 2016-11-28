@@ -31,6 +31,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
+        /// RegularExpressionValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
+        
+        /// <summary>
         /// idUTextBox control.
         /// </summary>
         /// <remarks>
@@ -65,15 +74,6 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cargarImagen;
-        
-        /// <summary>
-        /// RegularExpressionValidator6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
         
         /// <summary>
         /// Label1 control.
@@ -238,13 +238,13 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.TextBox confirmarContrasenaTextBox;
         
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// RequiredFieldValidator6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
         /// Label6 control.

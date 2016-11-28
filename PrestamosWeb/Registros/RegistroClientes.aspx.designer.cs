@@ -49,6 +49,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
         /// nombreCliTextBox control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nombreCliTextBox;
+        
+        /// <summary>
+        /// rutaPDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList rutaPDropDownList;
         
         /// <summary>
         /// Label3 control.
@@ -67,6 +85,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
+        /// Label9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
         /// apellidoCliTextBox control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox apellidoCliTextBox;
+        
+        /// <summary>
+        /// cedulaCliTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cedulaCliTextBox;
         
         /// <summary>
         /// Label4 control.
@@ -85,15 +121,6 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// apodoCliTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apodoCliTextBox;
-        
-        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -101,6 +128,15 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// apodoCliTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox apodoCliTextBox;
         
         /// <summary>
         /// direccionCliTextBox control.
@@ -121,78 +157,6 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// referenciaCliTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox referenciaCliTextBox;
-        
-        /// <summary>
-        /// Label7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
-        
-        /// <summary>
-        /// rutaPDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList rutaPDropDownList;
-        
-        /// <summary>
-        /// Label8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
-        
-        /// <summary>
-        /// mRadioButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton mRadioButton;
-        
-        /// <summary>
-        /// fRadioButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton fRadioButton;
-        
-        /// <summary>
-        /// Label9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
-        
-        /// <summary>
-        /// cedulaCliTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cedulaCliTextBox;
-        
-        /// <summary>
         /// Label10 control.
         /// </summary>
         /// <remarks>
@@ -200,6 +164,15 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
+        
+        /// <summary>
+        /// referenciaCliTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox referenciaCliTextBox;
         
         /// <summary>
         /// telefonoCliTextBox control.
@@ -220,6 +193,15 @@ namespace PrestamosWeb.Registros {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
         /// celularCliTextBox control.
         /// </summary>
         /// <remarks>
@@ -227,6 +209,24 @@ namespace PrestamosWeb.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox celularCliTextBox;
+        
+        /// <summary>
+        /// mRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton mRadioButton;
+        
+        /// <summary>
+        /// fRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton fRadioButton;
         
         /// <summary>
         /// nuevoCliButton control.

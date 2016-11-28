@@ -28,29 +28,6 @@ namespace PrestamosWeb.Registros
             usuario.ConfirmarContrasena = confirmarContrasenaTextBox.Text;
             usuario.TipoUsuario = usuarioUDropDownList.SelectedValue;
             usuario.Foto = Fotos.ImageUrl;
-            //try
-            //{
-            //    if (fileUploader1.HasFile)
-            //    {
-            //        // Se verifica que la extensión sea de un formato válido
-            //        string ext = fileUploader1.PostedFile.FileName;
-            //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-            //        string[] formatos =
-            //          new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
-            //        if (Array.IndexOf(formatos, ext) < 0)
-
-            //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
-            //            GuardarArchivo(fileUploader1.PostedFile);
-            //            usuario.Foto= @"C:\Users\walle1\Desktop\Aplicada II\PrestamosWebAp2\PrestamosWeb\PrestamosWeb\temp\" + fileUploader1.FileName;
-            //    }
-            //    else
-            //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
         }
         public void DevolverDatos(Usuarios usuario)
         {
@@ -62,7 +39,6 @@ namespace PrestamosWeb.Registros
             usuarioUDropDownList.SelectedValue = usuario.TipoUsuario;
             Fotos.ImageUrl = usuario.Foto;
         }
-
         public void Limpiar()
         {
             idUTextBox.Text = string.Empty;
@@ -74,7 +50,6 @@ namespace PrestamosWeb.Registros
             usuarioUDropDownList.SelectedIndex = 0;
             Fotos.ImageUrl = "/Fotos/images.png";
         }
-
 
         protected void nuevoUButton_Click(object sender, EventArgs e)
         {
@@ -123,8 +98,6 @@ namespace PrestamosWeb.Registros
                 CargarDatos(usuario);
                 if (usuario.Eliminar())
                 {
-
-
                     Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
                     Limpiar();
                 }
@@ -135,7 +108,6 @@ namespace PrestamosWeb.Registros
 
             }
         }
-
         protected void buscarUButton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
@@ -200,11 +172,6 @@ namespace PrestamosWeb.Registros
         //{
         //    throw ex;
         //}
-
-
-
-
-
         protected void cargarImagen_Click1(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
