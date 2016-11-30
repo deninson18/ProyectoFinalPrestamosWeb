@@ -56,12 +56,22 @@ namespace PrestamosWeb.Registros
                 if (cobrador.Insertar())
                 {
                     Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
                 else
                 {
                     Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
                 }
 
+            }
+            if (cobrador.Modificar())
+            {
+                Utility.ShowToastr(this, "Edito Correctamente", "Message", "SUCCESS");
+                Limpiar();
+            }
+            else
+            {
+                Utility.ShowToastr(this, "Error Al Editar", "Message", "Warning");
             }
         }
 
@@ -80,9 +90,9 @@ namespace PrestamosWeb.Registros
                 CargarDatos(cobrador);
                 if (cobrador.Eliminar())
                 {
-                    Limpiar();
-
+                   
                     Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
                 else
                 {

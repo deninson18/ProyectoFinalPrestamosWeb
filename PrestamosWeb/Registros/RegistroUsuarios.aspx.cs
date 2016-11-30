@@ -25,7 +25,6 @@ namespace PrestamosWeb.Registros
             usuario.Apellidos = apellidoUTextBox.Text;
             usuario.NombreUsuario = nombreUsuarioTextBox.Text;
             usuario.Contrasena = contrasenaUTextBox.Text;
-            usuario.ConfirmarContrasena = confirmarContrasenaTextBox.Text;
             usuario.TipoUsuario = usuarioUDropDownList.SelectedValue;
             usuario.Foto = Fotos.ImageUrl;
         }
@@ -115,6 +114,7 @@ namespace PrestamosWeb.Registros
 
             if (id > 0)
             {
+                
                 if (usuario.Buscar(id))
                 {
                     DevolverDatos(usuario);

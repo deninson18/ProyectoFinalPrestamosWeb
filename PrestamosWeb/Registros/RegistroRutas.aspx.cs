@@ -20,11 +20,10 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Rutas ruta)
         {
-            int id;
-            int.TryParse(idRutaTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idRutaTextBox.Text);
             ruta.RutaId = id;
             ruta.NombreRuta = nombreRuTextBox.Text;
-            ruta.CobradorId =Convert.ToInt32(cobradorRuDropDownList.SelectedValue);
+            ruta.CobradorId = Convert.ToInt32(cobradorRuDropDownList.SelectedValue);
         }
         private void DevolverDatos(Rutas ruta)
         {
@@ -53,14 +52,27 @@ namespace PrestamosWeb.Registros
         {
             Rutas ruta = new Rutas();
             CargarDatos(ruta);
-
-            if (ruta.Insertar())
+            if (idRutaTextBox.Text.Length <= 0)
             {
-                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                if (ruta.Insertar())
+                {
+                    Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                }
+            }
+            CargarDatos(ruta);
+            if (ruta.Modificar())
+            {
+                Utility.ShowToastr(this, "Edito Correctamente", "Message", "SUCCESS");
+                Limpiar();
             }
             else
             {
-                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                Utility.ShowToastr(this, "Error Al Editar", "Message", "Warning");
             }
         }
 
@@ -72,17 +84,15 @@ namespace PrestamosWeb.Registros
         protected void eliminarRuButton_Click(object sender, EventArgs e)
         {
             Rutas ruta = new Rutas();
-            int id = 0;
-            int.TryParse(idRutaTextBox.Text, out id);
-            ruta.RutaId = id;
-
+            int id = Utility.ConvierteEntero(idRutaTextBox.Text);
             if (id > 0)
             {
                 CargarDatos(ruta);
                 if (ruta.Eliminar())
                 {
-                    Limpiar();
+
                     Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
                 else
                 {
@@ -95,8 +105,7 @@ namespace PrestamosWeb.Registros
         protected void buscarRuButton_Click(object sender, EventArgs e)
         {
             Rutas ruta = new Rutas();
-            int id = 0;
-            int.TryParse(idRutaTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idRutaTextBox.Text);
 
             if (id > 0)
             {

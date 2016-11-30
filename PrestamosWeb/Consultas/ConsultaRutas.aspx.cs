@@ -38,5 +38,12 @@ namespace PrestamosWeb.Consultas
             rutasGridView.DataSource = ruta.Listado(" * ", Filtro, "");
             rutasGridView.DataBind();
         }
+
+        protected void impRutaButton_Click(object sender, EventArgs e)
+        {
+            Rutas ruta = new Rutas();
+            Response.Redirect("~/Reportes/ReporteRuta.aspx");
+            Response.Clear();
+        }
     }
 }

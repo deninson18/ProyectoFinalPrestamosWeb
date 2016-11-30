@@ -37,5 +37,12 @@ namespace PrestamosWeb.Consultas
             ClientesGridView.DataSource = cliente.Listado("*", Filtro, "");
             ClientesGridView.DataBind();
         }
+
+        protected void impClienteButton_Click(object sender, EventArgs e)
+        {
+            Clientes cliente = new Clientes();
+            Response.Redirect("~/Reportes/ReporteCliente.aspx");
+            Response.Clear();
+        }
     }
 }

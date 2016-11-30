@@ -20,8 +20,7 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Clientes cliente)
         {
-            int id;
-            int.TryParse(idClienteTextBox.Text, out id);
+            int id = Utility.ConvierteEntero(idClienteTextBox.Text);
             cliente.ClienteId = id;
             cliente.RutaId = Convert.ToInt32(rutaPDropDownList.SelectedValue);
             cliente.Nombres = nombreCliTextBox.Text;
@@ -91,18 +90,28 @@ namespace PrestamosWeb.Registros
         {
             Clientes cliente = new Clientes();
            CargarDatos(cliente);
-
-            if (cliente.Insertar())
+            if (idClienteTextBox.Text.Length == 0)
             {
-                Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                if (cliente.Insertar())
+                {
+                    Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                }
+            }
+            CargarDatos(cliente);
+            if (cliente.Modificar())
+            {
+                Utility.ShowToastr(this, "Edito Correctamente", "Message", "SUCCESS");
                 Limpiar();
             }
             else
             {
-                Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
+                Utility.ShowToastr(this, "Error Al Editar", "Message", "Warning");
             }
-
-
         }
 
         protected void nuevoCliButton_Click(object sender, EventArgs e)
@@ -112,19 +121,17 @@ namespace PrestamosWeb.Registros
 
         protected void eliminarCliButton_Click(object sender, EventArgs e)
         {
-            Clientes cliente = new Clientes();
-            int id = 0;
-            int.TryParse(idClienteTextBox.Text, out id);
-            cliente.ClienteId= id;
-
+            Clientes cliente = new Clientes();       
+            int id = Utility.ConvierteEntero(idClienteTextBox.Text);    
             if (id > 0)
             {
                 CargarDatos(cliente);
                 if (cliente.Eliminar())
                 {
-                    Limpiar();
+                 
 
                     Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
                 else
                 {
@@ -135,9 +142,8 @@ namespace PrestamosWeb.Registros
 
         protected void buscarCliButton_Click(object sender, EventArgs e)
         {
-            Clientes cliente = new Clientes();
-            int id = 0;
-            int.TryParse(idClienteTextBox.Text, out id);
+            Clientes cliente = new Clientes();         
+            int id = Utility.ConvierteEntero(idClienteTextBox.Text);
 
             if (id > 0)
             {

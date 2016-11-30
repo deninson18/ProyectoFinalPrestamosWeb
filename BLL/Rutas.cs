@@ -51,7 +51,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Rutas set NombreRuta='{0}' CobradorId={1} where RutaId={2} ",
+                retorno = conexion.Ejecutar(String.Format("update Rutas set NombreRuta='{0}', CobradorId={1} where RutaId={2} ",
                     this.NombreRuta, this.CobradorId,this.RutaId));
             }
             catch (Exception ex)
@@ -109,7 +109,13 @@ namespace BLL
             }
             return conexion.ObtenerDatos("Select RutaId, C.CobradorId, C.Nombres, NombreRuta from Rutas as R inner join Cobradores as C on C.CobradorId=R.CobradorId Where " + Condicion + Orden); 
         }
+        public DataTable ListadoDt(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
 
-       
+            return conexion.ObtenerDatos(string.Format("select *" + " from Rutas where " + Condicion));
+
+        }
+
     }
 }

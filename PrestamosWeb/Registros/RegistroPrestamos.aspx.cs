@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 
+
 namespace PrestamosWeb.Registros
 {
     public partial class RegistroPrestamos : System.Web.UI.Page
@@ -14,35 +15,31 @@ namespace PrestamosWeb.Registros
         {
            
             if (!IsPostBack)
-            {  
-                CargarDropDList();               
+            {              
+                CargarDropDList();                             
             }
           
         }
         private void CargarDatos(Prestamos prestamo)
-        {
-            int id;
-            int.TryParse(idPTextBox.Text, out id);
+        {          
+            int id = Utility.ConvierteEntero(idPTextBox.Text);
             prestamo.PrestamoId = id;
             prestamo.ClienteId = Convert.ToInt32(clientePDropDownList.SelectedValue);
             prestamo.FechaInicial = fechaInicialPTextBox.Text;
             prestamo.FechaVencimiento = fechaFinalPTextBox.Text;
             prestamo.CantidadCuota = (float)Convert.ToDecimal(cantidadCuotaDropDownList.SelectedValue.ToString());
             prestamo.Interes = (float)Convert.ToDecimal(interesDropDownList.SelectedValue.ToString());
-            float idMonto;
-            float.TryParse(montoPTextBox.Text, out idMonto);
+         
+            float idMonto = Utility.ConvierteFloat(montoPTextBox.Text);
             prestamo.Monto = idMonto;
-
-            float cuotaId;
-            float.TryParse(CuotaPTextBox.Text, out cuotaId);
+          
+            float cuotaId = Utility.ConvierteFloat(CuotaPTextBox.Text);
             prestamo.Cuota = cuotaId;
-
-            float pTotal;
-            float.TryParse(PagoTotalPTextBox.Text, out pTotal);
+       
+            float pTotal = Utility.ConvierteFloat(PagoTotalPTextBox.Text);
             prestamo.PagoTotal = pTotal;
-
-            int NuSemana;
-            int.TryParse(nuSemanaPTextBox.Text, out NuSemana);
+        
+            int NuSemana = Utility.ConvierteEntero(nuSemanaPTextBox.Text);
             prestamo.NuSemana = NuSemana;
         }
 
@@ -51,7 +48,15 @@ namespace PrestamosWeb.Registros
         {
             idPTextBox.Text = prestamo.PrestamoId.ToString();
             clientePDropDownList.Text = prestamo.ClienteId.ToString();
+            fechaInicialPTextBox.Text = prestamo.FechaInicial.ToString();
+            fechaFinalPTextBox.Text = prestamo.FechaVencimiento.ToString();
             montoPTextBox.Text = prestamo.Monto.ToString();
+            CuotaPTextBox.Text = prestamo.Cuota.ToString();
+            nuSemanaPTextBox.Text = prestamo.NuSemana.ToString();
+            cantidadCuotaDropDownList.SelectedValue = prestamo.CantidadCuota.ToString();
+            interesDropDownList.Text = prestamo.Interes.ToString();
+            PagoTotalPTextBox.Text = prestamo.PagoTotal.ToString();
+
         }
      private void Limpiar()
         {
@@ -82,6 +87,7 @@ namespace PrestamosWeb.Registros
             if (prestamo.Insertar())
             {
                 Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                Limpiar();
             }
             else
             {
@@ -108,6 +114,48 @@ namespace PrestamosWeb.Registros
         protected void clientePDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void eliminarPButton_Click(object sender, EventArgs e)
+        {
+            Prestamos prestamo = new Prestamos();
+            int id = Utility.ConvierteEntero(idPTextBox.Text);
+
+            if (id > 0)
+            {
+                CargarDatos(prestamo);
+                if (prestamo.Eliminar())
+                {
+
+                    Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Eliminar", "Message", "Error");
+                }
+
+            }
+        }
+
+        protected void buscarPButton_Click(object sender, EventArgs e)
+        {
+            Prestamos prestamo = new Prestamos();
+
+            int id = Utility.ConvierteEntero(idPTextBox.Text);
+
+            if (id > 0)
+            {
+                if (prestamo.Buscar(id))
+                {
+                    DevolverDatos(prestamo);
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "NO EXISTE PRESTAMO ID !", "Message", "Error");
+                }
+
+            }
         }
     }
 }

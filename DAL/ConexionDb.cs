@@ -15,7 +15,7 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=PrestamoWebDB;Integrated Security=True");
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
             Cmd = new SqlCommand();
         }
 

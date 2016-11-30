@@ -85,6 +85,7 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.IO, Version=2.6.8.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -165,12 +166,7 @@
     <Content Include="Content\toastr.min.js" />
     <Content Include="Fotos\Deninson.jpg" />
     <Content Include="Fotos\user.png" />
-    <Content Include="PrestamoWebDBDataSet.xsc">
-      <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="PrestamoWebDBDataSet.xss">
-      <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
-    </Content>
+    <Content Include="LOGIN.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Registros\RegistroClientes.aspx" />
     <Content Include="Registros\RegistroCobradores.aspx" />
@@ -178,7 +174,10 @@
     <Content Include="Registros\RegistroPrestamos.aspx" />
     <Content Include="Registros\RegistroRutas.aspx" />
     <Content Include="Registros\RegistroUsuarios.aspx" />
+    <Content Include="Reportes\ReporteCliente.aspx" />
+    <Content Include="Reportes\ReporteCobrador.aspx" />
     <Content Include="Reportes\ReportePrestamos.aspx" />
+    <Content Include="Reportes\ReporteRuta.aspx" />
     <Content Include="Reportes\ReporteUsuario.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
@@ -228,10 +227,17 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
-    <Compile Include="PrestamoWebDBDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
+    <Compile Include="LOGIN.aspx.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGIN.aspx.designer.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>PrestamoWebDBDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestamDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
@@ -288,12 +294,33 @@
     <Compile Include="Registros\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteCliente.aspx.cs">
+      <DependentUpon>ReporteCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteCliente.aspx.designer.cs">
+      <DependentUpon>ReporteCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteCobrador.aspx.cs">
+      <DependentUpon>ReporteCobrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteCobrador.aspx.designer.cs">
+      <DependentUpon>ReporteCobrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportePrestamos.aspx.cs">
       <DependentUpon>ReportePrestamos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reportes\ReportePrestamos.aspx.designer.cs">
       <DependentUpon>ReportePrestamos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteRuta.aspx.cs">
+      <DependentUpon>ReporteRuta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteRuta.aspx.designer.cs">
+      <DependentUpon>ReporteRuta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteUsuario.aspx.cs">
       <DependentUpon>ReporteUsuario.aspx</DependentUpon>
@@ -324,11 +351,17 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
-    <None Include="PrestamoWebDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PrestamoWebDBDataSet.Designer.cs</LastGenOutput>
+    <Content Include="PrestamDataSet.xsc">
+      <DependentUpon>PrestamDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PrestamDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestamDataSet.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="PrestamDataSet.xss">
+      <DependentUpon>PrestamDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -347,7 +380,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Rpts\ClientesReport.rdlc" />
+    <EmbeddedResource Include="Rpts\CobradoresReport.rdlc" />
     <EmbeddedResource Include="Rpts\PrestamosReport.rdlc" />
+    <EmbeddedResource Include="Rpts\RutasReport.rdlc" />
     <EmbeddedResource Include="Rpts\UsuariosReport.rdlc" />
   </ItemGroup>
   <ItemGroup />

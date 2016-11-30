@@ -125,7 +125,14 @@ namespace BLL
             }
             return conexion.ObtenerDatos(("Select " + Campos + " from Cobradores where " + Condicion + Orden));
         }
+        public DataTable ListadoDt(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
 
-       
+            return conexion.ObtenerDatos(string.Format("select *" + " from Cobradores where " + Condicion));
+
+        }
+
+
     }
 }

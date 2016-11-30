@@ -41,5 +41,12 @@ namespace PrestamosWeb.Consultas
             cobradoresGridView.DataBind();
 
         }
+
+        protected void imprimirCobradorButton_Click(object sender, EventArgs e)
+        {
+            Cobradores cobrador = new Cobradores();
+            Response.Redirect("~/Reportes/ReporteCobrador.aspx");
+            Response.Clear();
+        }
     }
 }

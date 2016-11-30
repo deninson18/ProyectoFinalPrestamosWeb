@@ -16,7 +16,7 @@ namespace PrestamosWeb.Registros
             if (!IsPostBack)
             {
                 DataTable dt = new DataTable();
-                fechaCobroTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                //fechaCobroTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 CargarDropList();
                 dt.Columns.AddRange(new DataColumn[3] { new DataColumn("PrestamoId"), new DataColumn("NuSemana"), new DataColumn("Cuota")});
                 Session["Cobros"] = dt;
@@ -37,9 +37,9 @@ namespace PrestamosWeb.Registros
             float.TryParse(abonoCobroTextBox.Text, out abono);
             cobro.Abono = abono;
 
-            float Total;
-            float.TryParse(TotalCobroTextBox.Text, out Total);
-            cobro.Total = Total;
+            //float Total;
+            //float.TryParse(TotalCobroTextBox.Text, out Total);
+            //cobro.Total = Total;
 
             foreach (GridViewRow row in cobrosGridView.Rows)
             {
@@ -55,7 +55,7 @@ namespace PrestamosWeb.Registros
             cuotaCobroDropDownList.SelectedIndex = 0;
             abonoCobroTextBox.Text = string.Empty;
             subTotalCobroTextBox.Text = string.Empty;
-            TotalCobroTextBox.Text = string.Empty;
+            //TotalCobroTextBox.Text = string.Empty;
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[3] { new DataColumn("PrestamoId"), new DataColumn("NuSemana"), new DataColumn("Cuota") });
             Session["Cobros"] = dt;
@@ -65,9 +65,9 @@ namespace PrestamosWeb.Registros
         private void CargarDropList()
         {
             Prestamos prestamo = new Prestamos();
-            clienteCobroDropDownList.DataSource = prestamo.Listado("PrestamoId,Nombres", "1=1", "");
+            clienteCobroDropDownList.DataSource = prestamo.Listado("ClienteId,Nombres", "1=1", "");
             clienteCobroDropDownList.DataTextField = "Nombres";
-            clienteCobroDropDownList.DataValueField = "PrestamoId";
+            clienteCobroDropDownList.DataValueField = "ClienteId";
             clienteCobroDropDownList.DataBind();
         }
 
@@ -80,7 +80,9 @@ namespace PrestamosWeb.Registros
                 if (cobro.Insertar())
                 {
                     Utility.ShowToastr(this.Page, "Guardo Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
+
                 else
                 {
                     Utility.ShowToastr(this.Page, "Error al Guardar", "Message", "Error");
@@ -93,6 +95,7 @@ namespace PrestamosWeb.Registros
                 if (cobro.Modificar())
                 {
                     Utility.ShowToastr(this, "Edito Correctamente", "Message", "SUCCESS");
+                    Limpiar();
                 }
                 else
                 {

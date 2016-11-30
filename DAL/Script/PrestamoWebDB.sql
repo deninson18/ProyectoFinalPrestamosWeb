@@ -40,8 +40,8 @@ Celular varchar(14));
 
 create table Prestamos(PrestamoId int primary key identity(1,1),
 ClienteId int references Clientes(ClienteId),
-FechaInicial varchar(30),
-FechaVencimiento varchar(30),
+FechaInicial date,
+FechaVencimiento date,
 Monto float, 
 NuSemana int,
 CantidadCuota float,
@@ -64,16 +64,14 @@ Total float
  );
                          
 create table NoCobrados(NoCobradosId int identity primary key,
-RutaId int references Rutas(RutaId),
-Total float
- );
+Total float,
+SubTotal float);
 
 create table NoCobradosDetalle(NoCobradoId int identity primary key,
 PrestamoId int references Prestamos(PrestamoId),
-Cedula varchar(15),
 CuotaAtraso int,
 Mora float,--No Aplica para no cobro
- SubTotal float)
+);
 
 
 drop table Usuarios;

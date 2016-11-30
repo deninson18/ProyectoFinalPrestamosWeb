@@ -9,13 +9,14 @@
     <div class="container" id="home">
         <div class="row text-center scrollclass">
             <div class="col-md-12">
-                <span class="head-main">THE DESIGN VIEW </span>
+                <span class="head-main">PRESTAMOS </span>
             </div>
         </div>
     </div>
     <!--END HOME SECTION-->
 
     <!--ABOUT SECTION-->
+    
     <section class="for-full-back color-bg-one" id="about">
         <div class="container">
             <div class="row text-center">
@@ -378,9 +379,5 @@
         </section>
   
     <!--END SOCIAL SECTION-->
-    <!--FOOTER SECTION -->
-    <div class="for-full-back" id="footer">
-        2014 www.yourdomain.com | All Right Reserved | by: <a href="http://binarytheme.com" target="_blank" style="color:#fff" >www.binarytheme.com</a>
-         
-    </div>
+   
 </asp:Content>

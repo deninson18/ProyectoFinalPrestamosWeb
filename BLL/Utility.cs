@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Data;
+using DAL;
 
 
 namespace BLL
@@ -27,6 +29,21 @@ namespace BLL
             float id = 0;
             float.TryParse(f, out id);
             return id;
+        }
+        public static bool BuscarDuplicado(string tabla, string campoBusqueda, string DescripcionBuscada)
+        {
+            ConexionDb conexion = new ConexionDb();
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = conexion.ObtenerDatos(string.Format("select * from " + tabla + " where " + campoBusqueda + "= '" + DescripcionBuscada + "'"));
+            }
+            catch (Exception exc)
+            {
+
+                throw exc;
+            }
+            return dt.Rows.Count > 0;
         }
     }
 }

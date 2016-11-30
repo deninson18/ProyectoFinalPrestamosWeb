@@ -43,19 +43,19 @@
                     <div class="form-group col-md-offset-2">
                         <asp:Label ID="Label3" runat="server" Text="Nombre de Usuario:" Font-Bold="True"></asp:Label>
                         <asp:TextBox ID="nombreUsuarioTextBox" runat="server" placeholder="Usuario" Width="800px" Height="26px" CssClass="form-control" MaxLength="40"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" ErrorMessage="Nombre de Usuario Incorrecto" Font-Size="Medium" ForeColor="Red" ValidationExpression="[a-zA-ZñÑ\s]{2,50}" ValidationGroup="A">*</asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" ErrorMessage="Nombre de Usuario Incorrecto" Font-Size="Medium" ForeColor="Red" ValidationExpression="^[a-zA-Z./s]{3,20}$" ValidationGroup="A">*</asp:RegularExpressionValidator>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" ErrorMessage="INGRESE SU NOMBRE DE USUARIO" ForeColor="Red" ValidationGroup="A"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group col-md-offset-2">
                         <asp:Label ID="Label4" runat="server" Text="PASSWORD:" Font-Bold="True"></asp:Label>
-                        <asp:TextBox ID="contrasenaUTextBox" runat="server" placeholder="Contraseña" Width="800px" Height="26px" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="contrasenaUTextBox" runat="server" placeholder="Contraseña" Width="800px" Height="26px" CssClass="form-control" MaxLength="50" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="contrasenaUTextBox" ErrorMessage="INGRESE SU CONTRASEÑA" ForeColor="Red" ValidationGroup="A"></asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="contrasenaUTextBox" ControlToValidate="confirmarContrasenaTextBox" ErrorMessage="Contrasena diferente" ForeColor="Red" ValidationGroup="A"></asp:CompareValidator>
 
                     </div>
                     <div class="form-group col-md-offset-2">
                         <asp:Label ID="Label5" runat="server" Text="CONFIRMAR CONTRASEÑA:" Font-Bold="True"></asp:Label>
-                        <asp:TextBox ID="confirmarContrasenaTextBox" runat="server" placeholder="Confirmar la Contraseña" Width="800px" Height="26px" CssClass="form-control" MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="confirmarContrasenaTextBox" runat="server" placeholder="Confirmar la Contraseña" Width="800px" Height="26px" CssClass="form-control" MaxLength="50" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="CONFIRME SU CONTRASEÑA" ForeColor="Red" ControlToValidate="confirmarContrasenaTextBox" ValidationGroup="A"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group col-md-offset-2">

@@ -66,10 +66,11 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Clientes set RutaId={0} Nombres='{1}', Apellidos='{2}', Apodos='{3}', Direccion='{4}', Referencia='{5}', Sexo={6}, Cedula='{7}', Telefono='{8}', Celular='{9}' where ClienteId={10}",
-                    this.Nombres,this.Apellidos,this.Apodos,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("update Clientes set RutaId={0}, Nombres='{1}', Apellidos='{2}', Apodos='{3}', Direccion='{4}', Referencia='{5}', Sexo={6}, Cedula='{7}', Telefono='{8}', Celular='{9}' where ClienteId={10}",
+                    this.RutaId,this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,this.ClienteId));
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -134,7 +135,14 @@ namespace BLL
             }
             return conexion.ObtenerDatos(("Select ClienteId,R.RutaId,R.NombreRuta,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula from Clientes as Cl inner join Rutas as R on R.RutaId=Cl.RutaId where " + Condicion + Orden));
         }
+        public DataTable ListadoDt(string Condicion)
+        {
+            ConexionDb conexion = new ConexionDb();
 
-       
+            return conexion.ObtenerDatos(string.Format("select *" + " from Clientes where " + Condicion));
+
+        }
+
+
     }
 }
