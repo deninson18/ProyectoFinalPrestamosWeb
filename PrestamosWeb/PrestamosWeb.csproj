@@ -162,6 +162,7 @@
     <Content Include="Consultas\ConsultaUsuarios.aspx" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\toastr.min.js" />
     <Content Include="Fotos\Deninson.jpg" />

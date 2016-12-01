@@ -2,9 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br/><br/>
-    <br/><br/>
-    <br/><br/>
+    
     <!--HOME SECTION-->
     <div class="container" id="home">
         <div class="row text-center scrollclass">

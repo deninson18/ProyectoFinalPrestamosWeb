@@ -4,71 +4,93 @@
 
 <html lang="en">
 <head runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery-3.1.1.min.js"></script>
+
+    <script src="/Content/toastr.min.js"></script>
     <title>PRESTAMOS ONLINE</title>
 
-    <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />--%>
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <link href="/Content/toastr.min.css" rel="stylesheet" />
-    <script src="/Content/toastr.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="/Content/toastr.min.css" rel="stylesheet" />
+
+    <script type="/text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 <body style="background-color: black">
-    
-    <form id="form1" runat="server">
-        <nav class="navbar navbar-inverse navbar-fixed-top scrollclass color-bg-one ">
-            <div class="container">
-               
+
+    <form runat="server">
+        <nav class="navbar navbar-inverse scrollclass">
+            <div class="container color-white">
 
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="nav navbar-brand " href="#">PRESTAMOS-ONLINE</a>
+                    <a class="navbar navbar-nav">PRESTAMOS-ONLINE</a>
                 </div>
-                <div class=" nav nav-pills">
-                    <div class="navbar-collapse collapse">
-
-                        <ul class="nav navbar-nav navbar-right ">
-
-                            <li><a href="/Principal.aspx#home">INICIO</a></li>
-
-                            <li id="RegistrosLi" runat="server"><a href="/Registros/RegistroUsuarios.aspx">REGISTROS</a></li>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#clients-testimonial">TESTIMONIALS</a></li>
-                            <li><a href="#pricing">PRICING</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                            <li id="Logoutli" runat="server" c>
-                                <asp:LinkButton ID="logoutLinkButton" runat="server" OnClick="logoutLinkButton_Click">cerrar session</asp:LinkButton></li>
-                            <li><a href="#social-section">INICIAR</a></li>
-
-   
+                <ul class="nav nav-pills navbar-right">
+                    <li><a href="/Principal.aspx">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">REGISTROS
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Registros/RegistroUsuarios.aspx">Usuarios</a></li>
+                            <li><a href="/Registros/RegistroCobradores.aspx">Cobradores</a></li>
+                            <li><a href="/Registros/RegistroRutas.aspx">Rutas</a></li>
+                            <li><a href="/Registros/RegistroClientes.aspx">Clientes</a></li>
+                            <li><a href="/Registros/RegistroPrestamos.aspx">Prestamos</a></li>
+                            <li><a href="/Registros/RegistroCobros.aspx">Rutas</a></li>
                         </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">CONSULTAS
+        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Consultas/ConsultaUsuarios.aspx">Usuarios</a></li>
+                            <li><a href="/Consultas/ConsultaCobradores.aspx">Cobradores</a></li>
+                            <li><a href="/Consultas/ConsultaRutas.aspx">Rutas</a></li>
+                            <li><a href="/Consultas/ConsultaCliente.aspx">Clientes</a></li>
+                            <li><a href="/Consultas/ConsultaPrestamos.aspx">Prestamos</a></li>
+                         
 
+                        </ul>
+                    </li>
 
-                    </div>
-                    
-                    
-
-                </div>
-             
+                    <li><a href="#clients-testimonial">TESTIMONIALS</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li id="Logoutli" runat="server" c>
+                        <asp:LinkButton ID="logoutLinkButton" runat="server" OnClick="logoutLinkButton_Click">cerrar session</asp:LinkButton></li>
+                    <li><a href="#social-section">INICIAR</a></li>
+                </ul>
             </div>
         </nav>
-        <!-- END FOOTER SECTION -->
+
+        <!-- END FOOTER SECTION 
 
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
         <!-- CORE JQUERY  -->
@@ -81,8 +103,16 @@
         <script src="assets/plugins/jquery.easing.min.js"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
+
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
+
+        <script src="/Scripts/bootstrap.min.js"></script>
+        <script src="/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="/Scripts/jquery-3.1.1.slim.min.js"></script>
+        <script type="text/javascript"> $('.dropdown-toggle').dropdown()</script>
+
 
 
     </form>
@@ -90,24 +120,7 @@
     <div class="for-full-back" id="footer">
         2014 www.yourdomain.com | All Right Reserved | by: <a href="http://binarytheme.com" target="_blank" style="color: #fff">www.binarytheme.com</a>
     </div>
-    <%-- </head>  
-<body>  
-    <form id="form2" runat="server">  
-        <div>  
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" GridLines="None"  
-                AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt"  
-                PageSize="7" >  
-                <Columns>  
-                    <asp:BoundField DataField="EmpId" HeaderText="ID" />  
-                    <asp:BoundField DataField="Name" HeaderText="Nombre" />  
-                    <asp:BoundField DataField="Address" HeaderText="Dirección" />  
-                    <asp:BoundField DataField="Date" HeaderText="Fecha" />  
-                </Columns>  
-            </asp:GridView>  
-        </div>  
-    </form>  
-</body>  
-</html>--%>
+
     <%--- See more at: http://www.developerji.com/Post/-Como-dar-estilo-a-un-GridView-con-CSS-para-la-interfaz-de-usuario-/2084#sthash.rSDl2yXn.dpuf--%>
 </body>
 </html>
