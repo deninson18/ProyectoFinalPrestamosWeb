@@ -24,10 +24,10 @@ namespace BLL
             int.TryParse(e, out id);
             return id;
         }
-        public static float ConvierteFloat(string f)
+        public static float ConvierteFloat(string e)
         {
             float id = 0;
-            float.TryParse(f, out id);
+            float.TryParse(e, out id);
             return id;
         }
         public static bool BuscarDuplicado(string tabla, string campoBusqueda, string DescripcionBuscada)

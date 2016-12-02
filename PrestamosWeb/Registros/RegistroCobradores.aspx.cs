@@ -16,8 +16,7 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Cobradores cobrador)
         {
-            int id = Utility.ConvierteEntero(idCoTextBox.Text);
-            cobrador.CobradorId = id;
+            cobrador.CobradorId = Utility.ConvierteEntero(idCoTextBox.Text);        
             cobrador.Nombres = nombreCoTextBox.Text;
             cobrador.Apellidos = apellidoCoTextBox.Text;
             cobrador.Direccion = direccionCoTextBox.Text;

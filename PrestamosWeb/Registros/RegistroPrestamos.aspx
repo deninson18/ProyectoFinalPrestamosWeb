@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
     <div class="container">
         <div class="row">
             <div class=" panel panel-success">
@@ -36,7 +39,7 @@
                         <asp:Label ID="Label6" runat="server" class="col-md-offset-5" Text="SEMANA #:" Font-Bold="True"></asp:Label>
                         <div class="form-inline">
                             <asp:TextBox ID="CuotaPTextBox" runat="server" placeholder="Cuota" CssClass="form-control" Width="470px" Height="26px" Enabled="False"></asp:TextBox>
-                            <asp:TextBox ID="nuSemanaPTextBox" runat="server" value="1" placeholder="Semana #" CssClass="form-control" Width="405px" Height="26px" Enabled="False"></asp:TextBox>
+                            <asp:TextBox ID="nuSemanaPTextBox" runat="server" placeholder="Semana #" CssClass="form-control" Width="405px" Height="26px" Enabled="False">1</asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group col-md-offset-1">
@@ -51,13 +54,13 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <div class="form-group col-md-offset-1">                        
-                            <asp:Label ID="Label8" runat="server" Text="PAGO TOTAL:" Font-Bold="True"></asp:Label>                       
+                    <div class="form-group col-md-offset-1">
+                        <asp:Label ID="Label8" runat="server" Text="PAGO TOTAL:" Font-Bold="True"></asp:Label>
                         <asp:TextBox ID="PagoTotalPTextBox" runat="server" placeholder="Pago Total" CssClass="form-control" Width="885px" Height="26px" Enabled="False"></asp:TextBox>
                     </div>
                     <div class="text-center">
                         <asp:Button ID="nuevoPButton" class="btn btn-info" runat="server" Text="NUEVO" Width="84px" OnClick="nuevoPButton_Click" />
-                        <asp:Button ID="guardarPButton" class="btn btn-success" runat="server"  Text="GUARDAR" Width="84px" OnClick="guardarPButton_Click" ValidationGroup="A" />
+                        <asp:Button ID="guardarPButton" class="btn btn-success" runat="server" Text="GUARDAR" Width="84px" OnClick="guardarPButton_Click" ValidationGroup="A" />
                         <asp:Button ID="eliminarPButton" class="btn btn-danger" runat="server" Text="ELIMINAR" Width="84px" OnClick="eliminarPButton_Click" />
                     </div>
                 </div>

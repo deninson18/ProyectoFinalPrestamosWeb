@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
     <div class="container">
         <div class="row">
             <div class=" panel panel-success">
@@ -24,7 +27,7 @@
                         <div class="form-inline">
                             <asp:TextBox ID="nombreCliTextBox" runat="server" placeholder="Nombres" CssClass="form-control" Width="400px" Height="26px" MaxLength="30"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="nombreCliTextBox" ErrorMessage="Formato Incorrecto" ForeColor="Red" ValidationExpression="^[a-zA-Z ]*$" ValidationGroup="A">*</asp:RegularExpressionValidator>
-                           <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombreCliTextBox" ErrorMessage="INGRESE SU NOMBRE" ForeColor="Red" ValidationGroup="A"></asp:RequiredFieldValidator>--%>
+                            <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombreCliTextBox" ErrorMessage="INGRESE SU NOMBRE" ForeColor="Red" ValidationGroup="A"></asp:RequiredFieldValidator>--%>
                             <asp:DropDownList ID="rutaPDropDownList" runat="server" CssClass="form-control" Width="500px" Height="30px"></asp:DropDownList>
                         </div>
                     </div>
@@ -55,7 +58,7 @@
                         <asp:Label ID="Label10" class="col-md-offset-4" runat="server" Text="TELEFONO:" Font-Bold="True"></asp:Label>
                         <div class="form-inline">
                             <asp:TextBox ID="referenciaCliTextBox" runat="server" placeholder="Referencia" CssClass="form-control" Width="400px" Height="26px" MaxLength="50"></asp:TextBox>
-                     <%--       <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="referenciaCliTextBox" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationGroup="A"></asp:RegularExpressionValidator> ME QUITA EL DISENO Y NO TENIA TIEMPO--%>
+                            <%--       <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="referenciaCliTextBox" ErrorMessage="RegularExpressionValidator" ForeColor="Red" ValidationGroup="A"></asp:RegularExpressionValidator> ME QUITA EL DISENO Y NO TENIA TIEMPO--%>
                             <asp:TextBox ID="telefonoCliTextBox" runat="server" placeholder="Telefono" CssClass="form-control" Width="500px" Height="26px" MaxLength="14"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="telefonoCliTextBox" ErrorMessage="Formato Incorrecto" ForeColor="Red" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" ValidationGroup="A">*</asp:RegularExpressionValidator>
                         </div>

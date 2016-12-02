@@ -21,26 +21,19 @@ namespace PrestamosWeb.Registros
           
         }
         private void CargarDatos(Prestamos prestamo)
-        {          
-            int id = Utility.ConvierteEntero(idPTextBox.Text);
-            prestamo.PrestamoId = id;
+        {         
+            prestamo.PrestamoId = Utility.ConvierteEntero(idPTextBox.Text);         
             prestamo.ClienteId = Convert.ToInt32(clientePDropDownList.SelectedValue);
             prestamo.FechaInicial = fechaInicialPTextBox.Text;
             prestamo.FechaVencimiento = fechaFinalPTextBox.Text;
             prestamo.CantidadCuota = (float)Convert.ToDecimal(cantidadCuotaDropDownList.SelectedValue.ToString());
             prestamo.Interes = (float)Convert.ToDecimal(interesDropDownList.SelectedValue.ToString());
          
-            float idMonto = Utility.ConvierteFloat(montoPTextBox.Text);
-            prestamo.Monto = idMonto;
-          
-            float cuotaId = Utility.ConvierteFloat(CuotaPTextBox.Text);
-            prestamo.Cuota = cuotaId;
+          prestamo.Monto = Utility.ConvierteFloat(montoPTextBox.Text);                  
+           prestamo.Cuota = Utility.ConvierteFloat(CuotaPTextBox.Text);            
+            prestamo.PagoTotal= Utility.ConvierteFloat(PagoTotalPTextBox.Text);                 
+           prestamo.NuSemana = Utility.ConvierteEntero(nuSemanaPTextBox.Text);
        
-            float pTotal = Utility.ConvierteFloat(PagoTotalPTextBox.Text);
-            prestamo.PagoTotal = pTotal;
-        
-            int NuSemana = Utility.ConvierteEntero(nuSemanaPTextBox.Text);
-            prestamo.NuSemana = NuSemana;
         }
 
 

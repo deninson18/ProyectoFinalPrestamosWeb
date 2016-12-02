@@ -63,7 +63,7 @@
                             <li><a href="/Registros/RegistroRutas.aspx">Rutas</a></li>
                             <li><a href="/Registros/RegistroClientes.aspx">Clientes</a></li>
                             <li><a href="/Registros/RegistroPrestamos.aspx">Prestamos</a></li>
-                            <li><a href="/Registros/RegistroCobros.aspx">Rutas</a></li>
+                            <li><a href="/Registros/RegistroCobros.aspx">Cobros</a></li>       
                         </ul>
                     </li>
                     <li class="dropdown">

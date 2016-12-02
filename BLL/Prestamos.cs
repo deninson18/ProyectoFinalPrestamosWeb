@@ -59,7 +59,7 @@ namespace BLL
             try
             { 
             retorno = conexion.Ejecutar(String.Format("Insert Into Prestamos(ClienteId,FechaInicial,FechaVencimiento,Monto,NuSemana,CantidadCuota,Cuota,Interes,PagoTotal) values({0},'{1}','{2}',{3},{4},{5},{6},{7},{8})",
-                this.ClienteId,this.FechaInicial, FechaVencimiento, Monto, this.NuSemana, this.CantidadCuota, this.Cuota, this.Interes,this.PagoTotal));
+                this.ClienteId,this.FechaInicial, FechaVencimiento, this.Monto, this.NuSemana, this.CantidadCuota, this.Cuota, this.Interes,this.PagoTotal));
             }catch(Exception ex)
             {
                 throw ex;

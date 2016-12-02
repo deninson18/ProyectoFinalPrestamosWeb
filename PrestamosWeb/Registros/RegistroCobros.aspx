@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="container">
+    <br />
+    <br />
+    <br />
+    <div class="container">
         <div class="row">
             <div class=" panel panel-success">
                 <div class="panel-heading">
@@ -23,7 +26,7 @@
                         <asp:Label ID="Label7" runat="server" Text="Cliente" Font-Bold="True"></asp:Label>
                         <asp:Label ID="Label3" runat="server" class="col-md-offset-5" Text="Semana #:" Font-Bold="True"></asp:Label>
                         <div class="form-inline">
-                            <asp:DropDownList ID="clienteCobroDropDownList" runat="server" placeholder="Cliente" CssClass="form-control" Width="470px" Height="32px" AutoPostBack="True" ></asp:DropDownList>
+                            <asp:DropDownList ID="clienteCobroDropDownList" runat="server" placeholder="Cliente" CssClass="form-control" Width="470px" Height="32px" AutoPostBack="True" OnSelectedIndexChanged="clienteCobroDropDownList_SelectedIndexChanged1"></asp:DropDownList>
                             <asp:TextBox ID="SemanaNuCobroTextBox" runat="server" placeholder="Semana #" CssClass="form-control" Width="405px" Height="32px" MaxLength="8"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="SemanaNuCobroTextBox" ErrorMessage="Formato Incorrecto" ForeColor="Red" ValidationExpression="^[0-9]*" ValidationGroup="A">*</asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="SemanaNuCobroTextBox" ErrorMessage="INGRESE NUMERO DE SEMANA" ForeColor="Red" ValidationGroup="A"></asp:RequiredFieldValidator>

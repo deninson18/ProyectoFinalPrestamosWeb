@@ -20,8 +20,7 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Rutas ruta)
         {
-            int id = Utility.ConvierteEntero(idRutaTextBox.Text);
-            ruta.RutaId = id;
+            ruta.RutaId = Utility.ConvierteEntero(idRutaTextBox.Text);          
             ruta.NombreRuta = nombreRuTextBox.Text;
             ruta.CobradorId = Convert.ToInt32(cobradorRuDropDownList.SelectedValue);
         }

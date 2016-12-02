@@ -65,9 +65,9 @@ namespace PrestamosWeb.Registros
         private void CargarDropList()
         {
             Prestamos prestamo = new Prestamos();
-            clienteCobroDropDownList.DataSource = prestamo.Listado("ClienteId,Nombres", "1=1", "");
+            clienteCobroDropDownList.DataSource = prestamo.Listado("PrestamoId,Nombres", "1=1", "");
             clienteCobroDropDownList.DataTextField = "Nombres";
-            clienteCobroDropDownList.DataValueField = "ClienteId";
+            clienteCobroDropDownList.DataValueField = "PrestamoId";
             clienteCobroDropDownList.DataBind();
         }
 
@@ -106,12 +106,14 @@ namespace PrestamosWeb.Registros
 
         protected void agregarCobroButton_Click(object sender, EventArgs e)
         {
+            CobrosDetalle ct = new CobrosDetalle();
             DataTable dt = (DataTable)Session["Cobros"];
             dt.Rows.Add(clienteCobroDropDownList.SelectedValue, SemanaNuCobroTextBox.Text, cuotaCobroDropDownList.SelectedValue);
             Session["Cobros"] = dt;
             cobrosGridView.DataSource = dt;
             cobrosGridView.DataBind();
             CalcularSubTotal();
+         
 
         }
         private void CalcularSubTotal()
@@ -136,13 +138,15 @@ namespace PrestamosWeb.Registros
             Limpiar();
         }
 
-        protected void clienteCobroDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void clienteCobroDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
+                    
             Prestamos prestamo = new Prestamos();
             cuotaCobroDropDownList.DataSource = prestamo.Listado("PrestamoId,Cuota", "PrestamoId = " + clienteCobroDropDownList.SelectedValue, "");
             cuotaCobroDropDownList.DataTextField = "Cuota";
             cuotaCobroDropDownList.DataValueField = "Cuota";
             cuotaCobroDropDownList.DataBind();
+        
         }
     }
 }
