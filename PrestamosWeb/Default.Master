@@ -45,10 +45,11 @@
 <body style="background-color: black">
 
     <form runat="server">
-        <nav class="navbar navbar-inverse scrollclass">
+        <nav class="navbar navbar-inverse navbar-fixed-top scrollclass color-bg-one ">
             <div class="container color-white">
 
                 <div class="navbar-header">
+                    
                     <a class="navbar navbar-nav">PRESTAMOS-ONLINE</a>
                 </div>
                 <ul class="nav nav-pills navbar-right">

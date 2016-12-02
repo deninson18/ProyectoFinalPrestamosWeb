@@ -16,7 +16,7 @@ namespace PrestamosWeb.Registros
             if (!IsPostBack)
             {
                 DataTable dt = new DataTable();
-                //fechaCobroTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                fechaCobroTextBox.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 CargarDropList();
                 dt.Columns.AddRange(new DataColumn[3] { new DataColumn("PrestamoId"), new DataColumn("NuSemana"), new DataColumn("Cuota")});
                 Session["Cobros"] = dt;
