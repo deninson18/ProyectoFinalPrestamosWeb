@@ -127,51 +127,7 @@ namespace PrestamosWeb.Registros
             }
         }
 
-        //private void GuardarArchivo(HttpPostedFile file)
-        //{
-        //    // Se carga la ruta física de la carpeta temp del sitio
-        //    string ruta = Server.MapPath("~/temp");
-
-        //    // Si el directorio no existe, crearlo
-        //    if (!Directory.Exists(ruta))
-        //        Directory.CreateDirectory(ruta);
-
-        //    string archivo = String.Format("{0}\\{1}", ruta, file.FileName);
-
-        //    // Verificar que el archivo no exista
-        //    if (File.Exists(archivo))
-        //        Response.Write("<script>alert('Ya existe una imagen con nombre," + file.FileName + "')</script>");
-        //    else {
-        //        file.SaveAs(archivo);
-        //        Response.Write("<script>alert('" + "/temp/" + file.FileName + "')</script>");
-        //    }
-
-        //}
-
-
-        //try
-        //{
-        //    if (fileUploader1.HasFile)
-        //    {
-        //        // Se verifica que la extensión sea de un formato válido
-        //        string ext = fileUploader1.PostedFile.FileName;
-        //        ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
-        //        string[] formatos =new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
-        //        if (Array.IndexOf(formatos, ext) < 0)
-
-        //            Response.Write("<scrip>alert('Formato de imagen inválido.')</script>");
-        //        GuardarArchivo(fileUploader1.PostedFile);
-
-        //        // GuardarBD(fileUploader1.PostedFile);
-        //    }
-        //    else
-        //        Response.Write("<scrip>alert('Seleccione un archivo del disco duro.')</script>");
-
-        //}
-        //catch (Exception ex)
-        //{
-        //    throw ex;
-        //}
+     
         protected void cargarImagen_Click1(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
