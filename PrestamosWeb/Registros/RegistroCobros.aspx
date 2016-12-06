@@ -18,7 +18,7 @@
                         <asp:Label ID="Label2" runat="server" class="col-md-offset-5" Text="Fecha:" Font-Bold="True"></asp:Label>
                         <div class="form-inline">
                             <asp:TextBox ID="cobroIdTextBox" runat="server" placeholder="ID" CssClass="form-control" Width="390px" Height="26px" MaxLength="8"></asp:TextBox>
-                            <asp:Button ID="BuscarCobroButton" CssClass="btn btn-warning" runat="server" Text="BUSCAR" Width="84px" />
+                            <asp:Button ID="BuscarCobroButton" CssClass="btn btn-warning" runat="server" Text="BUSCAR" Width="84px" OnClick="BuscarCobroButton_Click" />
                             <asp:TextBox ID="fechaCobroTextBox" runat="server" placeholder="Fecha Inicial" CssClass="form-control" Width="390px" Height="26px" TextMode="Date"></asp:TextBox>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="text-center">
                         <asp:Button ID="nuevoButton" class="btn btn-info" runat="server" Text="NUEVO" Width="84px" OnClick="nuevoButton_Click" />
                         <asp:Button ID="guardarButton" class="btn btn-success" runat="server" Text="GUARDAR" Width="84px" OnClick="guardarButton_Click" ValidationGroup="A" />
-                        <asp:Button ID="eliminarButton" class="btn btn-danger" runat="server" Text="ELIMINAR" Width="84px" />
+                        <asp:Button ID="eliminarButton" class="btn btn-danger" runat="server" Text="ELIMINAR" Width="84px" OnClick="eliminarButton_Click" />
                     </div>
                 </div>
             </div>

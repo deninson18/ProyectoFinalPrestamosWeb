@@ -46,9 +46,24 @@ namespace PrestamosWeb.Registros
                 cobro.AgregarCobros(int.Parse(row.Cells[0].Text), int.Parse(row.Cells[1].Text), (float)Convert.ToDecimal(row.Cells[2].Text));
             }
         }
+        private void DevolverDatos(Cobros cobro)
+        {
+            cobroIdTextBox.Text = cobro.CobroId.ToString();
+            subTotalCobroTextBox.Text = cobro.SubTotal.ToString();
+            fechaCobroTextBox.Text = cobro.FechaCobro.ToString();
+            foreach (var item in cobro.ListaCobro)
+            {
+                DataTable dt = (DataTable)Session["Cobros"];
+                dt.Rows.Add(item.PrestamoId, item.NuSemana, item.Cuoata);
+                Session["Cobros"] = dt;
+                cobrosGridView.DataSource = Session["Cobros"];
+                cobrosGridView.DataBind();
+            }
+        }
 
         private void Limpiar()
         {
+            cobroIdTextBox.Text = string.Empty;
             clienteCobroDropDownList.SelectedIndex = 0;
             fechaCobroTextBox.Text = string.Empty;
             SemanaNuCobroTextBox.Text = string.Empty;
@@ -113,6 +128,7 @@ namespace PrestamosWeb.Registros
             cobrosGridView.DataSource = dt;
             cobrosGridView.DataBind();
             CalcularSubTotal();
+            SemanaNuCobroTextBox.Text = string.Empty;
          
 
         }
@@ -147,6 +163,48 @@ namespace PrestamosWeb.Registros
             cuotaCobroDropDownList.DataValueField = "Cuota";
             cuotaCobroDropDownList.DataBind();
         
+        }
+
+        protected void eliminarButton_Click(object sender, EventArgs e)
+        {
+            Cobros cobro = new Cobros();
+            int id = Utility.ConvierteEntero(cobroIdTextBox.Text);
+
+            if (id > 0)
+            {
+                CargarDatos(cobro);
+                if (cobro.Eliminar())
+                {
+
+                    Utility.ShowToastr(this.Page, "Elimino Correctamente", "Message", "SUCCESS");
+                    Limpiar();
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "Error al Eliminar", "Message", "Error");
+                }
+
+            }
+        }
+
+        protected void BuscarCobroButton_Click(object sender, EventArgs e)
+        {
+            Cobros cobro = new Cobros();
+
+            int id = Utility.ConvierteEntero(cobroIdTextBox.Text);
+
+            if (id > 0)
+            {
+                if (cobro.Buscar(id))
+                {
+                    DevolverDatos(cobro);
+                }
+                else
+                {
+                    Utility.ShowToastr(this.Page, "NO EXISTE COBRADOR ID !", "Message", "Error");
+                }
+
+            }
         }
     }
 }

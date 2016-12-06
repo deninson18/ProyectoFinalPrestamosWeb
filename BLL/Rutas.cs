@@ -67,7 +67,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("delelete from RutasCobradore where RutaId={0};delete from Rutas where RutaId={0}; ",this.RutaId));
+                retorno = conexion.Ejecutar(String.Format("delete from Rutas where RutaId={0}",this.RutaId));
             }
             catch (Exception ex)
             {

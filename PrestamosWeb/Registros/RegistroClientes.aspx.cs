@@ -20,8 +20,8 @@ namespace PrestamosWeb.Registros
         }
         private void CargarDatos(Clientes cliente)
         {
-            int id = Utility.ConvierteEntero(idClienteTextBox.Text);
-            cliente.ClienteId = id;
+            //int id = Utility.ConvierteEntero(idClienteTextBox.Text);
+            //cliente.ClienteId = id;
             cliente.RutaId = Convert.ToInt32(rutaPDropDownList.SelectedValue);
             cliente.Nombres = nombreCliTextBox.Text;
             cliente.Apellidos = apellidoCliTextBox.Text;

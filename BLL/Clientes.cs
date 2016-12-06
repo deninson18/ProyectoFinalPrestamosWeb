@@ -10,7 +10,7 @@ namespace BLL
     public class Clientes : ClaseMaestra
     {
         public int ClienteId { get; set; }
-        public int RutaId { get; set; }
+        public int RutaId { get; set; }     
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Apodos { get; set; }
@@ -24,7 +24,7 @@ namespace BLL
         public Clientes()
         {
             this.ClienteId = 0;
-            this.RutaId = 0;
+            this.RutaId = 0;        
             this.Nombres = "";
             this.Apellidos = "";
             this.Apodos = "";

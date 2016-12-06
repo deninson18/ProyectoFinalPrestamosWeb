@@ -138,7 +138,7 @@ namespace BLL
             {
                 Order = "order bye";
             }
-            return conexion.ObtenerDatos(string.Format("select " + Campos + " from Cobros where " + Condicion + Order));
+            return conexion.ObtenerDatos(string.Format("select CobroDetalleId, C.CobroId,PrestamoId,C.FechaCobro,NuSemana,Cuota,C.Abono,C.SubTotal from CobrosDetalle as CD inner join Cobros as C on CD.CobroId=C.CobroId where " + Condicion + Order));
         }
 
     }

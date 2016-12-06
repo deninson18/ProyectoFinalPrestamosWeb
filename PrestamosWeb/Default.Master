@@ -75,6 +75,7 @@
                             <li><a href="/Consultas/ConsultaRutas.aspx">Rutas</a></li>
                             <li><a href="/Consultas/ConsultaCliente.aspx">Clientes</a></li>
                             <li><a href="/Consultas/ConsultaPrestamos.aspx">Prestamos</a></li>
+                            <li><a href="/Consultas/ConsultaCobros.aspx">Cobros</a></li>
                          
 
                         </ul>

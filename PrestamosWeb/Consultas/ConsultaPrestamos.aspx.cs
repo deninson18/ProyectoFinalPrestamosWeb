@@ -14,8 +14,8 @@ namespace PrestamosWeb.Consultas
         {
             if (!IsPostBack)
             {
-                Prestamos prestamo = new Prestamos();
-                PrestamosGridView.DataSource = prestamo.Listado("*", "1=1", "");
+                Prestamos prestamo = new Prestamos();               
+                PrestamosGridView.DataSource = prestamo.Listado("*", "1=1", "");              
                 PrestamosGridView.DataBind();
             }
         }
